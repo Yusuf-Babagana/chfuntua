@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-this-in-production-xyz123456789')
 DEBUG = config('DEBUG', default=True, cast=bool)
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["chfuntua.pythonanywhere.com"]
 
 # Installed apps
 INSTALLED_APPS = [
