@@ -17,13 +17,13 @@
 </head>
 <body>
     <div class="motto-ribbon">
-        <i class="fas fa-quote-left"></i> Knowledge for Health and Sustainable Environment
+        <i class="fas fa-quote-left"></i> Knowledge for Health and Sustainable Environment <i class="fas fa-quote-right"></i>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-chesf sticky-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <span class="brand-icon"><i class="fas fa-graduation-cap"></i></span>
+                <span class="brand-icon pulse-glow"><i class="fas fa-graduation-cap"></i></span>
                 <span>CHESF</span>
             </a>
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -65,7 +65,7 @@
         </div>
     </nav>
 
-    <main class="flex-grow-1">
+    <main class="flex-grow-1 animated-bg">
         {% if messages %}
         <div class="container mt-4">
             {% for message in messages %}
@@ -89,8 +89,8 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <span class="brand-icon bg-white text-chesf-primary" style="width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;">
-                            <i class="fas fa-graduation-cap"></i>
+                        <span class="brand-icon" style="width:40px;height:40px;border-radius:10px;background:var(--chesf-gradient-vibrant);display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 12px rgba(15,118,110,0.3);">
+                            <i class="fas fa-graduation-cap text-white"></i>
                         </span>
                         <h5 class="fw-bold text-white mb-0">CHESF</h5>
                     </div>
@@ -101,28 +101,29 @@
                         An NBTE-approved institution training competent professionals in community health, environmental health, health information management, and allied health sciences.
                     </p>
                     <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(255,255,255,0.08);color:#94A3B8;border:none;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(255,255,255,0.08);color:#94A3B8;border:none;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(255,255,255,0.08);color:#94A3B8;border:none;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(255,255,255,0.08);color:#94A3B8;border:none;"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(59,130,246,0.15);color:#60A5FA;border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;padding:0;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(56,189,248,0.15);color:#38BDF8;border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;padding:0;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(236,72,153,0.15);color:#F472B6;border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;padding:0;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(239,68,68,0.15);color:#F87171;border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;padding:0;"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(16,185,129,0.15);color:#34D399;border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;padding:0;"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="col-6 col-lg-2">
                     <h6 class="footer-heading">Quick Links</h6>
                     <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="{% url 'home' %}">Home</a></li>
-                        <li class="mb-2"><a href="{% url 'login' %}">Login</a></li>
-                        <li class="mb-2"><a href="{% url 'signup' %}">Apply Now</a></li>
-                        <li class="mb-2"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                        <li class="mb-2"><a href="{% url 'home' %}"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--chesf-gold);"></i> Home</a></li>
+                        <li class="mb-2"><a href="{% url 'login' %}"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--chesf-gold);"></i> Login</a></li>
+                        <li class="mb-2"><a href="{% url 'signup' %}"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--chesf-gold);"></i> Apply Now</a></li>
+                        <li class="mb-2"><a href="{% url 'dashboard' %}"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--chesf-gold);"></i> Dashboard</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
                     <h6 class="footer-heading">Programmes</h6>
                     <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="#">ND Community Health</a></li>
-                        <li class="mb-2"><a href="#">Dip. Environmental Health</a></li>
-                        <li class="mb-2"><a href="#">Dip. Health Information</a></li>
-                        <li class="mb-2"><a href="#">Dip. Pharmacy Technology</a></li>
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--chesf-gold);"></i> ND Community Health</a></li>
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--chesf-gold);"></i> Dip. Environmental Health</a></li>
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--chesf-gold);"></i> Dip. Health Information</a></li>
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--chesf-gold);"></i> Dip. Pharmacy Tech.</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">

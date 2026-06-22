@@ -1,3 +1,5 @@
+{% with icon_colors='var(--chesf-primary)|var(--chesf-purple)|var(--chesf-sky)|var(--chesf-gold-dark)|var(--chesf-coral)' %}
+{% with icon_bgs='linear-gradient(135deg,rgba(15,118,110,0.1),rgba(16,185,129,0.1))|linear-gradient(135deg,rgba(139,92,246,0.1),rgba(99,102,241,0.1))|linear-gradient(135deg,rgba(56,189,248,0.1),rgba(14,165,233,0.1))|linear-gradient(135deg,rgba(212,175,55,0.1),rgba(245,158,11,0.1))|linear-gradient(135deg,rgba(244,63,94,0.1),rgba(251,113,133,0.1))' %}
 <div class="col-md-6 col-lg-4 mb-3">
     <div class="card-chesf h-100">
         <div class="card-body p-4 position-relative overflow-hidden">
@@ -8,7 +10,7 @@
             {% endif %}
             <div class="d-flex align-items-center gap-3 mb-3">
                 <div style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;
-                    {% if status %}background:rgba(16,185,129,0.1);color:var(--chesf-success);{% else %}background:rgba(15,118,110,0.1);color:var(--chesf-primary);{% endif %}">
+                    {% if status %}background:linear-gradient(135deg,rgba(16,185,129,0.12),rgba(5,150,105,0.12));color:var(--chesf-success);{% else %}background:rgba(15,118,110,0.1);color:var(--chesf-primary);{% endif %}">
                     <i class="fas fa-{{ icon }}"></i>
                 </div>
                 <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);font-size:1rem;">{{ title }}</h5>
@@ -27,3 +29,5 @@
         </div>
     </div>
 </div>
+{% endwith %}
+{% endwith %}

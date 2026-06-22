@@ -11,7 +11,7 @@
             <div class="card-chesf border-0 shadow-lg mt-4 fade-up">
                 <div class="card-header bg-transparent border-bottom-0 pt-4 pb-0 px-4 px-md-5">
                     <div class="d-flex align-items-center gap-3 mb-1">
-                        <div style="width:48px;height:48px;border-radius:12px;background:rgba(15,118,110,0.1);display:flex;align-items:center;justify-content:center;color:var(--chesf-primary);font-size:1.2rem;">
+                        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,rgba(212,175,55,0.12),rgba(245,158,11,0.12));display:flex;align-items:center;justify-content:center;color:var(--chesf-gold-dark);font-size:1.2rem;">
                             <i class="fas fa-book"></i>
                         </div>
                         <div>
@@ -24,25 +24,29 @@
                     <form method="post" novalidate class="form-chesf">
                         {% csrf_token %}
                         
-                        <h6 class="fw-bold mb-3" style="color:var(--chesf-primary);font-size:0.9rem;">
-                            <i class="fas fa-user-check me-2"></i> Application Type
-                        </h6>
-                        <div class="mb-4 p-4 rounded-3" style="background:rgba(15,118,110,0.04);">
-                            {% for radio in form.application_type %}
-                            <div class="form-check form-check-inline me-4">
-                                {{ radio.tag }}
-                                <label class="form-check-label fw-semibold" for="{{ radio.id_for_label }}" style="color:var(--chesf-text-dark);">
-                                    {{ radio.choice_label }}
-                                </label>
+                        <div class="mb-4 p-4 rounded-3" style="background:linear-gradient(135deg,rgba(139,92,246,0.04),rgba(15,118,110,0.04));border:1px solid rgba(139,92,246,0.08);">
+                            <h6 class="fw-bold mb-3" style="color:var(--chesf-purple);font-size:0.9rem;">
+                                <i class="fas fa-user-check me-2"></i> Application Type
+                            </h6>
+                            <div class="d-flex flex-wrap gap-3">
+                                {% for radio in form.application_type %}
+                                <div class="form-check">
+                                    {{ radio.tag }}
+                                    <label class="form-check-label fw-semibold" for="{{ radio.id_for_label }}" style="color:var(--chesf-text-dark);">
+                                        {{ radio.choice_label }}
+                                    </label>
+                                </div>
+                                {% endfor %}
                             </div>
-                            {% endfor %}
                         </div>
 
-                        <h6 class="fw-bold mb-3" style="color:var(--chesf-primary);font-size:0.9rem;">
-                            <i class="fas fa-book me-2"></i> Programme Selection
-                        </h6>
-                        {{ form.first_choice|as_crispy_field }}
-                        {{ form.second_choice|as_crispy_field }}
+                        <div class="p-4 rounded-3 mb-3" style="background:linear-gradient(135deg,rgba(56,189,248,0.04),rgba(15,118,110,0.04));border:1px solid rgba(56,189,248,0.08);">
+                            <h6 class="fw-bold mb-3" style="color:var(--chesf-sky);font-size:0.9rem;">
+                                <i class="fas fa-book me-2"></i> Programme Selection
+                            </h6>
+                            {{ form.first_choice|as_crispy_field }}
+                            {{ form.second_choice|as_crispy_field }}
+                        </div>
                         
                         <div class="d-flex justify-content-between align-items-center mt-5 pt-4 border-top" style="border-color:rgba(15,118,110,0.08)!important;">
                             <a href="{% url 'dashboard' %}" class="btn btn-chesf-light btn-chesf-rounded px-4">

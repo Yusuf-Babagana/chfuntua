@@ -6,15 +6,15 @@
 <div class="container py-4">
     <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
         <h4 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">
-            <i class="fas fa-th-large me-2" style="color:var(--chesf-primary);"></i> Application Dashboard
+            <i class="fas fa-th-large me-2" style="color:var(--chesf-purple);"></i> Application Dashboard
         </h4>
         <span class="badge badge-chesf badge-chesf-green"><i class="far fa-clock me-1"></i> {{ application.created_at|date:"M d, Y" }}</span>
     </div>
 
     <div class="row g-3 mb-4">
         <div class="col-lg-8">
-            <div class="dash-stat h-100 d-flex align-items-center gap-3" style="background:linear-gradient(135deg,#F0FDFA,#E0F2FE);border-color:transparent;">
-                <div style="width:60px;height:60px;border-radius:14px;background:var(--chesf-gradient);display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;font-weight:700;flex-shrink:0;">
+            <div class="dash-stat h-100 d-flex align-items-center gap-3" style="background:linear-gradient(135deg,#F0FDFA,#FAF5FF,#E0F2FE);border-color:transparent;">
+                <div style="width:60px;height:60px;border-radius:14px;background:var(--chesf-gradient-vibrant);display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;font-weight:700;flex-shrink:0;box-shadow:0 4px 12px rgba(15,118,110,0.25);">
                     {{ user.first_name|first|default:"A" }}{{ user.last_name|first|default:"S" }}
                 </div>
                 <div>
@@ -24,14 +24,14 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="dash-stat h-100 d-flex flex-column justify-content-center">
+            <div class="dash-stat h-100 d-flex flex-column justify-content-center" style="border-color:rgba(139,92,246,0.1);">
                 <div class="d-flex align-items-center justify-content-between mb-2">
                     <span class="dash-stat-label">Status</span>
                     <span class="badge badge-chesf rounded-pill 
                         {% if application.status == 'submitted' %}badge-chesf-green
                         {% elif application.status == 'approved' %}badge-chesf-green
                         {% elif application.status == 'rejected' %}badge-chesf-red
-                        {% else %}badge-chesf-blue{% endif %}">
+                        {% else %}badge-chesf-purple{% endif %}">
                         {{ application.get_status_display|default:"In Progress" }}
                     </span>
                 </div>
@@ -50,9 +50,9 @@
     </div>
 
     {% if application.status == 'submitted' or application.status == 'approved' %}
-    <div class="card-chesf mb-4" style="background:rgba(16,185,129,0.06);border-color:rgba(16,185,129,0.15);">
+    <div class="card-chesf mb-4" style="background:linear-gradient(135deg,rgba(16,185,129,0.06),rgba(139,92,246,0.06));border-color:rgba(16,185,129,0.2);">
         <div class="card-body p-4 text-center">
-            <div style="width:70px;height:70px;border-radius:50%;background:rgba(16,185,129,0.1);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+            <div style="width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,rgba(16,185,129,0.12),rgba(139,92,246,0.12));display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;">
                 <i class="fas fa-check-circle" style="font-size:2.2rem;color:var(--chesf-success);"></i>
             </div>
             <h4 class="fw-bold" style="color:#065F46;">Application Successfully Submitted!</h4>
@@ -72,8 +72,8 @@
     <div class="d-flex align-items-center justify-content-between mb-3">
         <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">Application Sections</h5>
         {% if application.status != 'submitted' and application.status != 'approved' %}
-        <span class="small" style="color:var(--chesf-text-light);">
-            {{ completed_count }}/5 Completed
+        <span class="small fw-semibold counter-pill counter-pill-purple">
+            <i class="fas fa-tasks me-1"></i> {{ completed_count }}/5 Completed
         </span>
         {% endif %}
     </div>
@@ -86,7 +86,7 @@
     </div>
     {% endif %}
 
-    <div class="row">
+    <div class="row g-3">
         {% include "portal/partials/step_card.html" with title="Personal Information" icon="user" status=application.section_a_completed url="section_a" %}
         {% include "portal/partials/step_card.html" with title="Schools Attended" icon="school" status=application.section_b_completed url="section_b" %}
         {% include "portal/partials/step_card.html" with title="SSCE Results" icon="certificate" status=application.section_c_completed url="section_c" %}
