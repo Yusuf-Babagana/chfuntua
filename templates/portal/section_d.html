@@ -11,11 +11,11 @@
             <div class="card-chesf mt-4 fade-up">
                 <div class="card-header">
                     <div class="d-flex align-items-center gap-3">
-                        <div style="width:42px;height:42px;border-radius:8px;background:var(--chesf-bg);display:flex;align-items:center;justify-content:center;color:var(--chesf-primary);font-size:1rem;">
+                        <div style="width:42px;height:42px;border-radius:8px;background:var(--chesf-green-bg);display:flex;align-items:center;justify-content:center;color:var(--chesf-green);font-size:1rem;">
                             <i class="fas fa-book"></i>
                         </div>
                         <div>
-                            <h4 style="font-weight:700;color:var(--chesf-navy-dark);margin-bottom:0;font-size:1.1rem;">Course Selection</h4>
+                            <h4 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:0;font-size:1.1rem;">Course Selection</h4>
                             <small style="color:var(--chesf-text-light);">Select your preferred academic pathway.</small>
                         </div>
                     </div>
@@ -25,14 +25,14 @@
                         {% csrf_token %}
                         
                         <div style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:1.25rem;margin-bottom:1.25rem;">
-                            <h6 style="font-weight:700;color:var(--chesf-navy);font-size:0.85rem;margin-bottom:0.75rem;">
-                                <i class="fas fa-user-check me-2" style="color:var(--chesf-primary);"></i> Application Type
+                            <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.85rem;margin-bottom:0.75rem;">
+                                <i class="fas fa-user-check me-2" style="color:var(--chesf-green);"></i> Application Type
                             </h6>
                             <div class="d-flex flex-wrap gap-3">
                                 {% for radio in form.application_type %}
                                 <div class="form-check">
                                     {{ radio.tag }}
-                                    <label class="form-check-label fw-semibold" for="{{ radio.id_for_label }}" style="color:var(--chesf-navy);">
+                                    <label class="form-check-label fw-semibold" for="{{ radio.id_for_label }}" style="color:var(--chesf-text-dark);">
                                         {{ radio.choice_label }}
                                     </label>
                                 </div>
@@ -41,8 +41,8 @@
                         </div>
 
                         <div style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:1.25rem;">
-                            <h6 style="font-weight:700;color:var(--chesf-navy);font-size:0.85rem;margin-bottom:0.75rem;">
-                                <i class="fas fa-book me-2" style="color:var(--chesf-primary);"></i> Programme Selection
+                            <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.85rem;margin-bottom:0.75rem;">
+                                <i class="fas fa-book me-2" style="color:var(--chesf-green);"></i> Programme Selection
                             </h6>
                             {{ form.first_choice|as_crispy_field }}
                             {{ form.second_choice|as_crispy_field }}

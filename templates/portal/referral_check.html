@@ -10,16 +10,16 @@
             <div class="fade-up">
                 <div class="card-chesf text-center">
                     <div class="card-body p-5">
-                        <div style="width:64px;height:64px;border-radius:12px;background:var(--chesf-navy-dark);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                        <div style="width:64px;height:64px;border-radius:12px;background:var(--chesf-green);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;">
                             <i class="fas fa-ticket-alt fs-4" style="color:var(--chesf-gold);"></i>
                         </div>
-                        <h3 style="font-weight:800;color:var(--chesf-navy-dark);margin-bottom:0.25rem;">Referral Code or Payment</h3>
+                        <h3 style="font-weight:800;color:var(--chesf-text-dark);margin-bottom:0.25rem;">Referral Code or Payment</h3>
                         <p style="color:var(--chesf-text);margin-bottom:1.5rem;">Waive the application fee with a referral code or proceed to pay.</p>
                         <form method="post" class="form-chesf text-start">
                             {% csrf_token %}
                             <div style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:1.25rem;margin-bottom:1.25rem;">
-                                <label style="font-weight:700;color:var(--chesf-navy);font-size:0.85rem;margin-bottom:0.5rem;display:block;">
-                                    <i class="fas fa-hashtag me-2" style="color:var(--chesf-primary);"></i> Referral Code
+                                <label style="font-weight:700;color:var(--chesf-text-dark);font-size:0.85rem;margin-bottom:0.5rem;display:block;">
+                                    <i class="fas fa-hashtag me-2" style="color:var(--chesf-green);"></i> Referral Code
                                 </label>
                                 {{ form.code }}
                                 <small style="color:var(--chesf-text-light);margin-top:0.25rem;display:block;">

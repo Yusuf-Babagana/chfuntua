@@ -1,29 +1,27 @@
 :root {
-  --chesf-navy: #1E293B;
-  --chesf-navy-dark: #0F172A;
-  --chesf-navy-light: #334155;
-  --chesf-primary: #0D9488;
-  --chesf-primary-dark: #0F766E;
-  --chesf-primary-light: #14B8A6;
+  --chesf-green: #0F5C4B;
+  --chesf-green-dark: #0A3D32;
+  --chesf-green-light: #1A7A64;
+  --chesf-green-bg: #E8F5F1;
   --chesf-gold: #D4AF37;
   --chesf-gold-dark: #B8960F;
   --chesf-gold-light: #F5E6A3;
-  --chesf-bg: #F8FAFC;
-  --chesf-bg-alt: #F1F5F9;
-  --chesf-text: #475569;
-  --chesf-text-dark: #1E293B;
-  --chesf-text-light: #94A3B8;
+  --chesf-bg: #F7F8FA;
+  --chesf-bg-alt: #EFF1F3;
+  --chesf-text: #374151;
+  --chesf-text-dark: #111827;
+  --chesf-text-light: #9CA3AF;
   --chesf-white: #FFFFFF;
-  --chesf-border: #E2E8F0;
-  --chesf-border-light: #F1F5F9;
-  --chesf-success: #10B981;
-  --chesf-warning: #F59E0B;
-  --chesf-danger: #EF4444;
-  --chesf-info: #3B82F6;
-  --chesf-shadow-sm: 0 1px 3px rgba(30, 41, 59, 0.06);
-  --chesf-shadow: 0 4px 6px -1px rgba(30, 41, 59, 0.08), 0 2px 4px -2px rgba(30, 41, 59, 0.05);
-  --chesf-shadow-lg: 0 10px 15px -3px rgba(30, 41, 59, 0.08), 0 4px 6px -4px rgba(30, 41, 59, 0.04);
-  --chesf-shadow-xl: 0 20px 25px -5px rgba(30, 41, 59, 0.1), 0 8px 10px -6px rgba(30, 41, 59, 0.04);
+  --chesf-border: #E5E7EB;
+  --chesf-border-light: #F3F4F6;
+  --chesf-success: #059669;
+  --chesf-warning: #D97706;
+  --chesf-danger: #DC2626;
+  --chesf-info: #2563EB;
+  --chesf-shadow-sm: 0 1px 3px rgba(15, 92, 75, 0.06);
+  --chesf-shadow: 0 4px 6px -1px rgba(15, 92, 75, 0.08), 0 2px 4px -2px rgba(15, 92, 75, 0.05);
+  --chesf-shadow-lg: 0 10px 15px -3px rgba(15, 92, 75, 0.08), 0 4px 6px -4px rgba(15, 92, 75, 0.04);
+  --chesf-shadow-xl: 0 20px 25px -5px rgba(15, 92, 75, 0.1), 0 8px 10px -6px rgba(15, 92, 75, 0.04);
   --chesf-radius: 12px;
   --chesf-radius-sm: 8px;
   --chesf-radius-lg: 16px;
@@ -41,21 +39,20 @@ body {
 }
 
 ::selection {
-  background: var(--chesf-primary);
+  background: var(--chesf-green);
   color: white;
 }
 
 /* ===== NAVBAR ===== */
 .navbar-chesf {
-  background: var(--chesf-white) !important;
-  border-bottom: 1px solid var(--chesf-border);
+  background: var(--chesf-green) !important;
   padding: 0;
-  box-shadow: var(--chesf-shadow-sm);
+  box-shadow: var(--chesf-shadow);
 }
 
 .navbar-chesf .navbar-brand {
   font-weight: 800;
-  color: var(--chesf-navy-dark) !important;
+  color: var(--chesf-white) !important;
   font-size: 1.25rem;
   letter-spacing: -0.5px;
   display: flex;
@@ -67,8 +64,8 @@ body {
 .navbar-chesf .navbar-brand .brand-icon {
   width: 36px;
   height: 36px;
-  background: var(--chesf-navy-dark);
-  color: var(--chesf-gold);
+  background: var(--chesf-gold);
+  color: var(--chesf-green-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,7 +74,7 @@ body {
 }
 
 .navbar-chesf .navbar-nav .nav-link {
-  color: var(--chesf-navy-light) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   font-weight: 500;
   padding: 1.25rem 1rem !important;
   transition: color 0.15s ease;
@@ -87,8 +84,18 @@ body {
 
 .navbar-chesf .navbar-nav .nav-link:hover,
 .navbar-chesf .navbar-nav .nav-link.active {
-  color: var(--chesf-primary) !important;
-  border-bottom-color: var(--chesf-primary);
+  color: var(--chesf-white) !important;
+  border-bottom-color: var(--chesf-gold);
+}
+
+.navbar-chesf .navbar-nav .btn-chesf-primary {
+  background: var(--chesf-gold);
+  color: var(--chesf-green-dark) !important;
+}
+
+.navbar-chesf .navbar-nav .btn-chesf-primary:hover {
+  background: var(--chesf-gold-dark);
+  color: var(--chesf-green-dark) !important;
 }
 
 .navbar-chesf .navbar-nav .btn {
@@ -98,14 +105,22 @@ body {
   border-radius: 8px;
 }
 
+.navbar-chesf .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-chesf .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 /* ===== MOTTO RIBBON ===== */
 .motto-ribbon {
-  background: var(--chesf-navy-dark);
-  color: rgba(255, 255, 255, 0.85);
+  background: var(--chesf-green-dark);
+  color: var(--chesf-gold-light);
   text-align: center;
   padding: 0.5rem 0;
   font-size: 0.8rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.3px;
   border-bottom: 2px solid var(--chesf-gold);
 }
@@ -125,70 +140,70 @@ body {
 }
 
 .btn-chesf-primary {
-  background: var(--chesf-primary);
+  background: var(--chesf-green);
   color: white;
 }
 
 .btn-chesf-primary:hover {
-  background: var(--chesf-primary-dark);
+  background: var(--chesf-green-dark);
   color: white;
   transform: translateY(-1px);
   box-shadow: var(--chesf-shadow);
 }
 
 .btn-chesf-secondary {
-  background: var(--chesf-navy);
+  background: var(--chesf-green-dark);
   color: white;
 }
 
 .btn-chesf-secondary:hover {
-  background: var(--chesf-navy-dark);
+  background: #062D24;
   color: white;
   transform: translateY(-1px);
 }
 
 .btn-chesf-outline {
   background: transparent;
-  color: var(--chesf-primary);
-  border: 1.5px solid var(--chesf-primary);
+  color: var(--chesf-green);
+  border: 1.5px solid var(--chesf-green);
 }
 
 .btn-chesf-outline:hover {
-  background: var(--chesf-primary);
+  background: var(--chesf-green);
   color: white;
 }
 
 .btn-chesf-light {
   background: var(--chesf-bg-alt);
-  color: var(--chesf-navy-light);
+  color: var(--chesf-text);
   border: 1px solid var(--chesf-border);
 }
 
 .btn-chesf-light:hover {
   background: var(--chesf-border);
-  color: var(--chesf-navy);
+  color: var(--chesf-text-dark);
 }
 
 .btn-chesf-white {
   background: var(--chesf-white);
-  color: var(--chesf-navy);
+  color: var(--chesf-green);
   border: 1.5px solid var(--chesf-border);
 }
 
 .btn-chesf-white:hover {
   background: var(--chesf-bg);
-  border-color: var(--chesf-primary);
-  color: var(--chesf-primary);
+  border-color: var(--chesf-green);
+  color: var(--chesf-green-dark);
 }
 
 .btn-chesf-gold {
   background: var(--chesf-gold);
-  color: var(--chesf-navy-dark);
+  color: var(--chesf-green-dark);
 }
 
 .btn-chesf-gold:hover {
   background: var(--chesf-gold-dark);
-  color: var(--chesf-navy-dark);
+  color: var(--chesf-green-dark);
   transform: translateY(-1px);
 }
 
@@ -198,7 +213,7 @@ body {
 }
 
 .btn-chesf-success:hover {
-  background: #059669;
+  background: #047857;
   color: white;
   transform: translateY(-1px);
 }
@@ -249,13 +264,13 @@ body {
 
 .form-chesf .form-control:focus,
 .form-chesf .form-select:focus {
-  border-color: var(--chesf-primary);
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+  border-color: var(--chesf-green);
+  box-shadow: 0 0 0 3px rgba(15, 92, 75, 0.1);
 }
 
 .form-chesf label {
   font-weight: 600;
-  color: var(--chesf-navy);
+  color: var(--chesf-text-dark);
   margin-bottom: 0.35rem;
   font-size: 0.85rem;
 }
@@ -272,9 +287,9 @@ body {
 }
 
 .alert-chesf-success {
-  background: #F0FDF4;
-  color: #166534;
-  border: 1px solid #BBF7D0;
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
 }
 
 .alert-chesf-error {
@@ -340,15 +355,15 @@ body {
 }
 
 .stepper-chesf .step-item.completed .step-circle {
-  background: var(--chesf-primary);
+  background: var(--chesf-green);
   color: white;
-  border-color: var(--chesf-primary);
+  border-color: var(--chesf-green);
 }
 
 .stepper-chesf .step-item.active .step-circle {
   background: var(--chesf-white);
-  color: var(--chesf-primary);
-  border-color: var(--chesf-primary);
+  color: var(--chesf-green);
+  border-color: var(--chesf-green);
 }
 
 .stepper-chesf .step-item .step-label {
@@ -361,7 +376,7 @@ body {
 }
 
 .stepper-chesf .step-item.active .step-label {
-  color: var(--chesf-primary);
+  color: var(--chesf-green);
 }
 
 .stepper-chesf .step-item.completed .step-label {
@@ -370,24 +385,24 @@ body {
 
 /* ===== FOOTER ===== */
 .footer-chesf {
-  background: var(--chesf-navy-dark);
-  color: #94A3B8;
+  background: var(--chesf-green-dark);
+  color: rgba(255, 255, 255, 0.65);
   margin-top: auto;
   border-top: 3px solid var(--chesf-gold);
 }
 
 .footer-chesf a {
-  color: #CBD5E1;
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .footer-chesf a:hover {
-  color: var(--chesf-primary-light);
+  color: var(--chesf-gold);
 }
 
 .footer-chesf .footer-heading {
-  color: white;
+  color: var(--chesf-gold);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -402,7 +417,7 @@ body {
 
 /* ===== HERO ===== */
 .hero-chesf {
-  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+  background: linear-gradient(135deg, #F7F8FA 0%, #E8F5F1 100%);
   border-bottom: 1px solid var(--chesf-border);
   padding: 5rem 0 3.5rem;
 }
@@ -415,8 +430,8 @@ body {
 
 .section-title .section-badge {
   display: inline-block;
-  background: var(--chesf-bg-alt);
-  color: var(--chesf-primary);
+  background: var(--chesf-green-bg);
+  color: var(--chesf-green);
   font-weight: 600;
   font-size: 0.7rem;
   padding: 0.3rem 1rem;
@@ -424,12 +439,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.75rem;
-  border: 1px solid var(--chesf-border);
+  border: 1px solid rgba(15, 92, 75, 0.15);
 }
 
 .section-title h2 {
   font-weight: 800;
-  color: var(--chesf-navy-dark);
+  color: var(--chesf-text-dark);
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
   letter-spacing: -0.5px;
@@ -471,7 +486,7 @@ body {
 .stat-card .stat-value {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--chesf-navy-dark);
+  color: var(--chesf-text-dark);
   line-height: 1;
   margin-bottom: 0.25rem;
 }
@@ -511,7 +526,7 @@ body {
 .program-card h5 {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--chesf-navy-dark);
+  color: var(--chesf-text-dark);
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
@@ -552,7 +567,7 @@ body {
 
 .accredit-badge .accredit-name {
   font-weight: 700;
-  color: var(--chesf-navy-dark);
+  color: var(--chesf-text-dark);
   font-size: 0.8rem;
   line-height: 1.2;
 }
@@ -594,7 +609,7 @@ body {
 .why-card h6 {
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--chesf-navy-dark);
+  color: var(--chesf-text-dark);
   margin-bottom: 0.25rem;
 }
 
@@ -624,7 +639,7 @@ body {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--chesf-navy-dark);
+  background: var(--chesf-green);
   color: var(--chesf-gold);
   display: flex;
   align-items: center;
@@ -637,7 +652,7 @@ body {
 .process-step h5 {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--chesf-navy-dark);
+  color: var(--chesf-text-dark);
   margin-bottom: 0.5rem;
 }
 
@@ -659,7 +674,7 @@ body {
 .dash-stat .dash-stat-value {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--chesf-navy-dark);
+  color: var(--chesf-text-dark);
   line-height: 1;
 }
 
@@ -677,7 +692,7 @@ body {
 }
 
 .progress-chesf .progress-bar {
-  background: var(--chesf-primary);
+  background: var(--chesf-green);
   border-radius: 3px;
 }
 
@@ -689,7 +704,7 @@ body {
 
 .table-chesf thead th {
   background: var(--chesf-bg-alt);
-  color: var(--chesf-navy-light);
+  color: var(--chesf-text);
   font-weight: 600;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -721,8 +736,8 @@ body {
 }
 
 .badge-chesf-green {
-  background: #F0FDF4;
-  color: #166534;
+  background: #ECFDF5;
+  color: #065F46;
 }
 
 .badge-chesf-blue {
@@ -757,9 +772,9 @@ body {
 }
 
 .counter-pill-green {
-  background: #F0FDF4;
-  color: #166534;
-  border: 1px solid #BBF7D0;
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
 }
 
 .counter-pill-purple {
@@ -782,13 +797,6 @@ body {
   border-radius: 2px;
 }
 
-.navy-divider {
-  width: 60px;
-  height: 3px;
-  background: var(--chesf-navy);
-  border-radius: 2px;
-}
-
 /* ===== SECTIONS ===== */
 .section-white {
   background: var(--chesf-white);
@@ -803,8 +811,7 @@ body {
 }
 
 /* ===== ACCENT TEXT ===== */
-.text-chesf-primary { color: var(--chesf-primary) !important; }
-.text-chesf-navy { color: var(--chesf-navy) !important; }
+.text-chesf-primary { color: var(--chesf-green) !important; }
 .text-chesf-gold { color: var(--chesf-gold) !important; }
 .text-chesf-success { color: var(--chesf-success) !important; }
 
