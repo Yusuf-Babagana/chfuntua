@@ -21,10 +21,10 @@ class StudentModelTest(TestCase):
 
 class ReferralCodeTest(TestCase):
     def setUp(self):
-        self.code = ReferralCode.objects.create(code='CHSTH-TEST123')
+        self.code = ReferralCode.objects.create(code='CHESF-TEST123')
 
     def test_referral_code_creation(self):
-        self.assertEqual(self.code.code, 'CHSTH-TEST123')
+        self.assertEqual(self.code.code, 'CHESF-TEST123')
         self.assertFalse(self.code.is_used)
         self.assertIsNone(self.code.used_by)
 
@@ -45,7 +45,7 @@ class ApplicationModelTest(TestCase):
 
     def test_application_creation(self):
         self.assertIsNotNone(self.application.application_number)
-        self.assertTrue(self.application.application_number.startswith('CHSTH/'))
+        self.assertTrue(self.application.application_number.startswith('CHESF/'))
         self.assertEqual(self.application.status, 'draft')
 
 
@@ -63,7 +63,7 @@ class ViewsTest(TestCase):
     def test_home_page(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'CHSTH')
+        self.assertContains(response, 'CHESF')
 
     def test_login_page(self):
         response = self.client.get('/login/')

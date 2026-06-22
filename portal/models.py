@@ -70,13 +70,13 @@ class Application(models.Model):
     )
 
     COURSES = (
-        ('diploma_schew', 'Diploma in Community Health (SCHEW)'),
+        ('diploma_schew', 'National Diploma in Community Health (ND CHEW)'),
         ('certificate_jchew', 'Certificate in Community Health (JCHEW)'),
         ('diploma_him', 'Diploma in Health Information Management'),
         ('diploma_env_health', 'Diploma in Environmental Health'),
-        ('diploma_xray', 'Diploma in X-Ray and Imaging'),
+        ('diploma_xray', 'Diploma in X-Ray and Imaging Technology'),
         ('diploma_nutrition', 'Diploma in Nutrition and Dietetics'),
-        ('retraining_jchew', 'Retraining in Community Health (JCHEW holders)'),
+        ('retraining_jchew', 'Retraining Programme in Community Health'),
     )
 
     student = models.OneToOneField(Student, on_delete=models.CASCADE, related_name='application')
@@ -120,7 +120,7 @@ class Application(models.Model):
         if not self.application_number:
             year = timezone.now().year
             random_num = ''.join(random.choices(string.digits, k=6))
-            self.application_number = f"CHSTH/{year}/{random_num}"
+            self.application_number = f"CHESF/{year}/{random_num}"
         super().save(*args, **kwargs)
 
     def __str__(self):

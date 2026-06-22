@@ -33,7 +33,7 @@ class Command(BaseCommand):
 
     def generate_unique_code(self):
         for _ in range(10):
-            code = 'CHSTH-' + ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+            code = 'CHESF-' + ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
             if not ReferralCode.objects.filter(code=code).exists():
                 return code
         return None

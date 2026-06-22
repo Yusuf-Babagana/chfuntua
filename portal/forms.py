@@ -118,7 +118,7 @@ class SectionDForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # Restrict courses in the template while preserving models
-        allowed_course = [('', '---------'), ('diploma_schew', 'National Diploma in Community Health (ND CHEW)')]
+        allowed_course = [('', '---------'), ('diploma_schew', 'National Diploma in Community Health (ND CHEW)'), ('certificate_jchew', 'Certificate in Community Health (JCHEW)'), ('diploma_him', 'Diploma in Health Information Management'), ('diploma_env_health', 'Diploma in Environmental Health'), ('diploma_xray', 'Diploma in X-Ray and Imaging Technology'), ('diploma_nutrition', 'Diploma in Nutrition and Dietetics'), ('retraining_jchew', 'Retraining Programme in Community Health')]
         self.fields['first_choice'].choices = allowed_course
         self.fields['second_choice'].choices = allowed_course
         

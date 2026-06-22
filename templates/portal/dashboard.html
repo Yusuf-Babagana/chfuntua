@@ -1,81 +1,93 @@
 {% extends 'base.html' %}
 
-{% block title %}Dashboard - CHSTH Admission Portal{% endblock %}
+{% block title %}Dashboard - CHESF Admission Portal{% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="fw-bold mb-0">
-        <i class="fas fa-grid-2 text-primary me-2"></i> Application Hub
-    </h2>
-</div>
+<div class="container py-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <h4 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">
+            <i class="fas fa-th-large me-2" style="color:var(--chesf-primary);"></i> Application Dashboard
+        </h4>
+        <span class="badge badge-chesf badge-chesf-green"><i class="far fa-clock me-1"></i> {{ application.created_at|date:"M d, Y" }}</span>
+    </div>
 
-<div class="row mb-5">
-    <!-- Welcome Card -->
-    <div class="col-lg-8 mb-4 mb-lg-0">
-        <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(to right, #ffffff, #f1f5f9);">
-            <div class="card-body p-4 d-flex align-items-center">
-                <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center me-4 shadow" style="width: 70px; height: 70px; font-size: 1.8rem; font-weight: bold;">
-                    {{ user.first_name|make_list|first }}{{ user.last_name|make_list|first }}
+    <div class="row g-3 mb-4">
+        <div class="col-lg-8">
+            <div class="dash-stat h-100 d-flex align-items-center gap-3" style="background:linear-gradient(135deg,#F0FDFA,#E0F2FE);border-color:transparent;">
+                <div style="width:60px;height:60px;border-radius:14px;background:var(--chesf-gradient);display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;font-weight:700;flex-shrink:0;">
+                    {{ user.first_name|first|default:"A" }}{{ user.last_name|first|default:"S" }}
                 </div>
                 <div>
-                    <h4 class="fw-bold mb-1">Welcome back, {{ user.get_full_name }}!</h4>
-                    <p class="text-muted mb-0">Continue building your future with CHSTH.</p>
+                    <h5 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Welcome, {{ user.get_full_name|default:user.username }}!</h5>
+                    <p class="small mb-0" style="color:var(--chesf-text-light);">Continue your application to CHESF.</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Status Card -->
-    <div class="col-lg-4">
-        <div class="card h-100 border-0 shadow-sm bg-white">
-            <div class="card-body p-4 d-flex flex-column justify-content-center">
-                <p class="text-muted fw-semibold text-uppercase tracking-wider mb-1" style="font-size: 0.8rem;">Current Status</p>
-                <div class="d-flex align-items-center justify-content-between">
-                    <span class="badge rounded-pill bg-{{ application.status|yesno:'success,warning,info,primary' }} px-3 py-2 fs-6 shadow-sm">
+        <div class="col-lg-4">
+            <div class="dash-stat h-100 d-flex flex-column justify-content-center">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="dash-stat-label">Status</span>
+                    <span class="badge badge-chesf rounded-pill 
+                        {% if application.status == 'submitted' %}badge-chesf-green
+                        {% elif application.status == 'approved' %}badge-chesf-green
+                        {% elif application.status == 'rejected' %}badge-chesf-red
+                        {% else %}badge-chesf-blue{% endif %}">
                         {{ application.get_status_display|default:"In Progress" }}
                     </span>
-                    {% if application.application_number %}
-                        <div class="text-end">
-                            <small class="text-muted d-block">App. Number</small>
-                            <strong class="text-dark">{{ application.application_number }}</strong>
-                        </div>
-                    {% endif %}
                 </div>
+                {% if application.application_number %}
+                <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top" style="border-color:rgba(15,118,110,0.06)!important;">
+                    <span class="dash-stat-label">App. No.</span>
+                    <span class="fw-bold" style="color:var(--chesf-text-dark);font-size:0.85rem;">{{ application.application_number }}</span>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
-</div>
 
-{% if application.status == 'submitted' %}
-<!-- Completion Success -->
-<div class="card border-0 mb-5 bg-success bg-opacity-10">
-    <div class="card-body p-5 text-center">
-        <div class="bg-white rounded-circle d-inline-flex justify-content-center align-items-center mb-3 shadow-sm" style="width: 80px; height: 80px;">
-            <i class="fas fa-check-circle text-success" style="font-size: 3rem;"></i>
-        </div>
-        <h3 class="fw-bold text-success mb-3">Application Safely Received!</h3>
-        <p class="lead text-muted mb-4">Your application has been submitted and is currently locked for review.</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="{% url 'application_summary' %}" class="btn btn-primary px-4 py-2">
-                <i class="fas fa-eye me-2"></i> Review Form
-            </a>
-            <a href="{% url 'download_pdf' %}" class="btn btn-outline-success px-4 py-2">
-                <i class="fas fa-file-pdf me-2"></i> Download Document
-            </a>
+    {% if application.status == 'submitted' or application.status == 'approved' %}
+    <div class="card-chesf mb-4" style="background:rgba(16,185,129,0.06);border-color:rgba(16,185,129,0.15);">
+        <div class="card-body p-4 text-center">
+            <div style="width:70px;height:70px;border-radius:50%;background:rgba(16,185,129,0.1);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                <i class="fas fa-check-circle" style="font-size:2.2rem;color:var(--chesf-success);"></i>
+            </div>
+            <h4 class="fw-bold" style="color:#065F46;">Application Successfully Submitted!</h4>
+            <p class="small mb-3" style="color:var(--chesf-text-light);">Your application has been received and is under review.</p>
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                <a href="{% url 'application_summary' %}" class="btn btn-chesf-primary btn-chesf-rounded px-4">
+                    <i class="fas fa-eye me-1"></i> View Summary
+                </a>
+                <a href="{% url 'download_pdf' %}" class="btn btn-chesf-white btn-chesf-rounded px-4">
+                    <i class="fas fa-file-pdf me-1"></i> Download PDF
+                </a>
+            </div>
         </div>
     </div>
+    {% endif %}
+
+    <div class="d-flex align-items-center justify-content-between mb-3">
+        <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">Application Sections</h5>
+        {% if application.status != 'submitted' and application.status != 'approved' %}
+        <span class="small" style="color:var(--chesf-text-light);">
+            {{ completed_count }}/5 Completed
+        </span>
+        {% endif %}
+    </div>
+
+    {% if application.status != 'submitted' and application.status != 'approved' %}
+    <div class="mb-4">
+        <div class="progress progress-chesf">
+            <div class="progress-bar" role="progressbar" style="width:{% widthratio completed_count 5 100 %}%" aria-valuenow="{% widthratio completed_count 5 100 %}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        {% include "portal/partials/step_card.html" with title="Personal Information" icon="user" status=application.section_a_completed url="section_a" %}
+        {% include "portal/partials/step_card.html" with title="Schools Attended" icon="school" status=application.section_b_completed url="section_b" %}
+        {% include "portal/partials/step_card.html" with title="SSCE Results" icon="certificate" status=application.section_c_completed url="section_c" %}
+        {% include "portal/partials/step_card.html" with title="Course Selection" icon="book" status=application.section_d_completed url="section_d" %}
+        {% include "portal/partials/step_card.html" with title="Declaration & Upload" icon="signature" status=application.section_e_completed url="section_e" %}
+    </div>
 </div>
-{% endif %}
-
-<h4 class="fw-bold mb-4">Application Progress</h4>
-
-<div class="row">
-    <!-- Section Cards -->
-    {% include "portal/partials/step_card.html" with title="Personal Information" icon="user" status=application.section_a_completed url="section_a" %}
-    {% include "portal/partials/step_card.html" with title="Schools Attended" icon="school" status=application.section_b_completed url="section_b" %}
-    {% include "portal/partials/step_card.html" with title="SSCE Results" icon="certificate" status=application.section_c_completed url="section_c" %}
-    {% include "portal/partials/step_card.html" with title="Course Selection" icon="book" status=application.section_d_completed url="section_d" %}
-    {% include "portal/partials/step_card.html" with title="Declaration" icon="signature" status=application.section_e_completed url="section_e" %}
-</div>
-
 {% endblock %}

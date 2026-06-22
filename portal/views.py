@@ -125,7 +125,7 @@ def payment(request):
     if student.has_paid or student.used_referral:
         return redirect('dashboard')
 
-    reference = f"CHSTH-{request.user.id}-{timezone.now().timestamp()}"
+    reference = f"CHESF-{request.user.id}-{timezone.now().timestamp()}"
 
     Payment.objects.create(
         student=student,
@@ -198,9 +198,18 @@ def dashboard(request):
     except Application.DoesNotExist:
         application = Application.objects.create(student=student)
 
+    completed_count = sum([
+        application.section_a_completed,
+        application.section_b_completed,
+        application.section_c_completed,
+        application.section_d_completed,
+        application.section_e_completed,
+    ])
+
     context = {
         'application': application,
         'student': student,
+        'completed_count': completed_count,
     }
 
     return render(request, 'portal/dashboard.html', context)

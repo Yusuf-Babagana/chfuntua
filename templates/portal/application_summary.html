@@ -1,188 +1,199 @@
 {% extends 'base.html' %}
 
-{% block title %}Application Summary{% endblock %}
+{% block title %}Application Summary - CHESF{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center pt-3 pb-5">
-    <div class="col-lg-10 col-xl-9">
-        <div class="text-center mb-5">
-            <div class="bg-success text-white rounded-circle d-inline-flex justify-content-center align-items-center mb-3 shadow" style="width: 80px; height: 80px;">
-                <i class="fas fa-check fs-2"></i>
-            </div>
-            <h2 class="fw-extrabold text-success mb-2">Application Successfully Reconciled!</h2>
-            <p class="lead text-muted bg-white d-inline-block px-4 py-2 rounded-pill shadow-sm border mt-2">
-                Application Tracking ID: <strong class="text-primary ms-2">{{ application.application_number }}</strong>
-            </p>
-        </div>
-
-        <div class="card border-0 shadow-sm mb-4" style="border-radius: 20px;">
-            <div class="card-header bg-transparent border-bottom-0 pt-4 px-4 px-lg-5">
-                <h5 class="fw-bold text-dark mb-0"><i class="fas fa-user-circle text-primary me-2"></i> Personal Information</h5>
-            </div>
-            <div class="card-body p-4 px-lg-5 pt-3">
-                <div class="row align-items-center mb-4">
-                    {% if application.passport_photo %}
-                    <div class="col-auto">
-                        <img src="{{ application.passport_photo.url }}" alt="Passport" class="rounded-3 shadow-sm border border-2 border-white" style="width: 120px; height: 120px; object-fit: cover;">
-                    </div>
-                    {% endif %}
-                    <div class="col">
-                        <h4 class="fw-bold mb-0 text-dark">{{ application.first_name }} {{ application.other_names }} <span class="text-primary text-uppercase">{{ application.surname }}</span></h4>
-                        <p class="text-muted d-flex align-items-center mt-2"><i class="fas fa-envelope me-2"></i> {{ application.email }}</p>
-                        <p class="text-muted d-flex align-items-center"><i class="fas fa-phone-alt me-2"></i> {{ application.phone }}</p>
-                    </div>
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
+            <div class="text-center mb-5 fade-up">
+                <div style="width:80px;height:80px;border-radius:50%;background:rgba(16,185,129,0.1);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                    <i class="fas fa-check-circle" style="font-size:2.5rem;color:var(--chesf-success);"></i>
                 </div>
-
-                <div class="table-responsive">
-                    <table class="table table-hover table-borderless bg-light rounded-4 border-0">
-                        <tbody>
-                            <tr><th class="ps-4 text-muted w-25">Date of Birth</th><td class="fw-medium text-dark">{{ application.date_of_birth|date:"F d, Y" }}</td></tr>
-                            <tr><th class="ps-4 text-muted">JAMB Number</th><td class="fw-medium text-dark"><span class="badge bg-primary bg-opacity-10 text-primary">{{ application.jamb_number }}</span></td></tr>
-                            <tr><th class="ps-4 text-muted">JAMB Score</th><td class="fw-medium text-dark"><span class="badge bg-success bg-opacity-10 text-success fs-6">{{ application.jamb_score }}</span></td></tr>
-                            <tr><th class="ps-4 text-muted">State of Origin</th><td class="fw-medium text-dark">{{ application.state_of_origin }}</td></tr>
-                            <tr><th class="ps-4 text-muted">LGA</th><td class="fw-medium text-dark">{{ application.lga }}</td></tr>
-                            <tr><th class="ps-4 text-muted">Home Address</th><td class="fw-medium text-dark pb-3">{{ application.address }}</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h6 class="fw-bold mt-4 mb-3 ps-2 text-dark"><i class="fas fa-users text-secondary me-2"></i> Guardian / Next of Kin</h6>
-                <div class="table-responsive">
-                    <table class="table table-hover table-borderless bg-light rounded-4 border-0">
-                        <tbody>
-                            <tr><th class="ps-4 text-muted w-25">Name</th><td class="fw-medium text-dark">{{ application.guardian_name }}</td></tr>
-                            <tr><th class="ps-4 text-muted">Relationship</th><td class="fw-medium text-dark">{{ application.guardian_relationship }}</td></tr>
-                            <tr><th class="ps-4 text-muted">Phone</th><td class="fw-medium text-dark">{{ application.guardian_phone }}</td></tr>
-                            <tr><th class="ps-4 text-muted">Address</th><td class="fw-medium text-dark pb-3">{{ application.guardian_address }}</td></tr>
-                        </tbody>
-                    </table>
+                <h2 class="fw-bold mb-2" style="color:#065F46;">Application Successfully Submitted!</h2>
+                <div class="d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm border mt-2" style="background:white;">
+                    <span style="color:var(--chesf-text-light);font-size:0.9rem;">Tracking ID:</span>
+                    <strong style="color:var(--chesf-primary);">{{ application.application_number }}</strong>
                 </div>
             </div>
-        </div>
 
-        {% if schools %}
-        <div class="card border-0 shadow-sm mb-4" style="border-radius: 20px;">
-            <div class="card-header bg-transparent border-bottom-0 pt-4 px-4 px-lg-5">
-                <h5 class="fw-bold text-dark mb-0"><i class="fas fa-school text-primary me-2"></i> Schools Attended</h5>
-            </div>
-            <div class="card-body p-4 px-lg-5 pt-3">
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle border-light">
-                        <thead class="table-light text-muted small text-uppercase">
-                            <tr>
-                                <th class="ps-3 py-3 border-0 rounded-start">School Name</th>
-                                <th class="border-0">From</th>
-                                <th class="border-0 rounded-end">To</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for school in schools %}
-                            <tr>
-                                <td class="ps-3 fw-bold text-dark">{{ school.school_name }}</td>
-                                <td class="text-secondary">{{ school.from_year }}</td>
-                                <td class="text-secondary">{{ school.to_year }}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+            <div class="card-chesf border-0 shadow-sm mb-4 fade-up">
+                <div class="card-header bg-transparent pb-0 px-4 px-lg-5 pt-4">
+                    <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">
+                        <i class="fas fa-user-circle me-2" style="color:var(--chesf-primary);"></i> Personal Information
+                    </h5>
                 </div>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if results %}
-        <div class="card border-0 shadow-sm mb-4" style="border-radius: 20px;">
-            <div class="card-header bg-transparent border-bottom-0 pt-4 px-4 px-lg-5">
-                <h5 class="fw-bold text-dark mb-0"><i class="fas fa-certificate text-primary me-2"></i> SSCE Results</h5>
-            </div>
-            <div class="card-body p-4 px-lg-5 pt-3">
-                <div class="row">
-                    {% for result in results %}
-                    <div class="col-md-6 mb-4">
-                        <div class="bg-light p-4 rounded-4 h-100 border-0 shadow-sm">
-                            <h6 class="fw-bold text-primary mb-1">{{ result.get_exam_type_display }} - {{ result.year }}</h6>
-                            <p class="small text-muted mb-3 border-bottom pb-2">Exam Link: {{ result.exam_number }}</p>
-
-                            {% if not result.awaiting_result %}
-                            <div class="table-responsive">
-                                <table class="table table-sm table-borderless mb-0">
-                                    <thead class="text-muted small">
-                                        <tr><th class="fw-normal">Subject</th><th class="fw-normal text-end">Grade</th></tr>
-                                    </thead>
-                                    <tbody class="fw-medium text-dark">
-                                        <tr><td>English</td><td class="text-end">{{ result.english }}</td></tr>
-                                        <tr><td>Mathematics</td><td class="text-end">{{ result.mathematics }}</td></tr>
-                                        <tr><td>Biology</td><td class="text-end">{{ result.biology }}</td></tr>
-                                        <tr><td>Chemistry</td><td class="text-end">{{ result.chemistry }}</td></tr>
-                                        <tr><td>Physics</td><td class="text-end">{{ result.physics }}</td></tr>
-                                        {% if result.subject_6 %}<tr><td>{{ result.subject_6 }}</td><td class="text-end">{{ result.grade_6 }}</td></tr>{% endif %}
-                                        {% if result.subject_7 %}<tr><td>{{ result.subject_7 }}</td><td class="text-end">{{ result.grade_7 }}</td></tr>{% endif %}
-                                        {% if result.subject_8 %}<tr><td>{{ result.subject_8 }}</td><td class="text-end">{{ result.grade_8 }}</td></tr>{% endif %}
-                                        {% if result.subject_9 %}<tr><td>{{ result.subject_9 }}</td><td class="text-end">{{ result.grade_9 }}</td></tr>{% endif %}
-                                    </tbody>
-                                </table>
+                <div class="card-body px-4 px-lg-5 pt-3">
+                    <div class="row align-items-center mb-4">
+                        {% if application.passport_photo %}
+                        <div class="col-auto">
+                            <img src="{{ application.passport_photo.url }}" alt="Passport" class="rounded-3 shadow-sm border border-2" style="width:100px;height:100px;object-fit:cover;border-color:var(--chesf-primary)!important;">
+                        </div>
+                        {% endif %}
+                        <div class="col">
+                            <h4 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">
+                                {{ application.first_name }} {{ application.other_names }}
+                                <span style="color:var(--chesf-primary);text-transform:uppercase;">{{ application.surname }}</span>
+                            </h4>
+                            <div class="d-flex flex-wrap gap-3 mt-2 small" style="color:var(--chesf-text-light);">
+                                <span><i class="fas fa-envelope me-1"></i> {{ application.email }}</span>
+                                <span><i class="fas fa-phone me-1"></i> {{ application.phone }}</span>
                             </div>
-                            {% else %}
-                                <div class="alert alert-warning py-2 mb-0 d-flex align-items-center">
-                                    <i class="fas fa-history me-2"></i> <span class="fw-bold small">Awaiting Result</span>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-chesf">
+                            <tbody>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;width:180px;">Date of Birth</th><td class="fw-semibold" style="color:var(--chesf-text-dark);">{{ application.date_of_birth|date:"F d, Y" }}</td></tr>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;">JAMB Number</th><td><span class="badge badge-chesf badge-chesf-blue">{{ application.jamb_number }}</span></td></tr>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;">JAMB Score</th><td><span class="badge badge-chesf badge-chesf-green fs-6">{{ application.jamb_score }}</span></td></tr>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;">State of Origin</th><td class="fw-semibold" style="color:var(--chesf-text-dark);">{{ application.state_of_origin }}</td></tr>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;">LGA</th><td class="fw-semibold" style="color:var(--chesf-text-dark);">{{ application.lga }}</td></tr>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;">Address</th><td class="fw-semibold pb-3" style="color:var(--chesf-text-dark);">{{ application.address }}</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h6 class="fw-bold mt-4 mb-3" style="color:var(--chesf-text-dark);font-size:0.9rem;">
+                        <i class="fas fa-users me-2" style="color:var(--chesf-text-light);"></i> Guardian / Next of Kin
+                    </h6>
+                    <div class="table-responsive">
+                        <table class="table table-chesf">
+                            <tbody>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;width:180px;">Name</th><td class="fw-semibold" style="color:var(--chesf-text-dark);">{{ application.guardian_name }}</td></tr>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;">Relationship</th><td class="fw-semibold" style="color:var(--chesf-text-dark);">{{ application.guardian_relationship }}</td></tr>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;">Phone</th><td class="fw-semibold" style="color:var(--chesf-text-dark);">{{ application.guardian_phone }}</td></tr>
+                                <tr><th class="ps-3" style="color:var(--chesf-text-light);font-weight:500;">Address</th><td class="fw-semibold pb-3" style="color:var(--chesf-text-dark);">{{ application.guardian_address }}</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            {% if schools %}
+            <div class="card-chesf border-0 shadow-sm mb-4 fade-up">
+                <div class="card-header bg-transparent pb-0 px-4 px-lg-5 pt-4">
+                    <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">
+                        <i class="fas fa-school me-2" style="color:var(--chesf-primary);"></i> Schools Attended
+                    </h5>
+                </div>
+                <div class="card-body px-4 px-lg-5 pt-3">
+                    <div class="table-responsive">
+                        <table class="table table-chesf">
+                            <thead>
+                                <tr><th class="rounded-start">School</th><th>From</th><th class="rounded-end">To</th></tr>
+                            </thead>
+                            <tbody>
+                                {% for school in schools %}
+                                <tr>
+                                    <td class="fw-semibold" style="color:var(--chesf-text-dark);">{{ school.school_name }}</td>
+                                    <td style="color:var(--chesf-text-light);">{{ school.from_year }}</td>
+                                    <td style="color:var(--chesf-text-light);">{{ school.to_year }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if results %}
+            <div class="card-chesf border-0 shadow-sm mb-4 fade-up">
+                <div class="card-header bg-transparent pb-0 px-4 px-lg-5 pt-4">
+                    <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">
+                        <i class="fas fa-certificate me-2" style="color:var(--chesf-primary);"></i> SSCE Results
+                    </h5>
+                </div>
+                <div class="card-body px-4 px-lg-5 pt-3">
+                    <div class="row">
+                        {% for result in results %}
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 rounded-3 h-100" style="background:var(--chesf-bg-alt);">
+                                <h6 class="fw-bold mb-1" style="color:var(--chesf-primary);">{{ result.get_exam_type_display }} ({{ result.year }})</h6>
+                                <small style="color:var(--chesf-text-light);">#{{ result.exam_number }}</small>
+                                {% if not result.awaiting_result %}
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-sm table-borderless mb-0" style="font-size:0.85rem;">
+                                        <thead><tr><th style="color:var(--chesf-text-light);font-weight:500;">Subject</th><th class="text-end" style="color:var(--chesf-text-light);font-weight:500;">Grade</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>English</td><td class="text-end fw-semibold">{{ result.english }}</td></tr>
+                                            <tr><td>Mathematics</td><td class="text-end fw-semibold">{{ result.mathematics }}</td></tr>
+                                            <tr><td>Biology</td><td class="text-end fw-semibold">{{ result.biology }}</td></tr>
+                                            <tr><td>Chemistry</td><td class="text-end fw-semibold">{{ result.chemistry }}</td></tr>
+                                            <tr><td>Physics</td><td class="text-end fw-semibold">{{ result.physics }}</td></tr>
+                                            {% if result.subject_6 %}<tr><td>{{ result.subject_6 }}</td><td class="text-end fw-semibold">{{ result.grade_6 }}</td></tr>{% endif %}
+                                            {% if result.subject_7 %}<tr><td>{{ result.subject_7 }}</td><td class="text-end fw-semibold">{{ result.grade_7 }}</td></tr>{% endif %}
+                                            {% if result.subject_8 %}<tr><td>{{ result.subject_8 }}</td><td class="text-end fw-semibold">{{ result.grade_8 }}</td></tr>{% endif %}
+                                            {% if result.subject_9 %}<tr><td>{{ result.subject_9 }}</td><td class="text-end fw-semibold">{{ result.grade_9 }}</td></tr>{% endif %}
+                                        </tbody>
+                                    </table>
                                 </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
-        <div class="card border-0 shadow-sm mb-4" style="border-radius: 20px;">
-            <div class="card-header bg-transparent border-bottom-0 pt-4 px-4 px-lg-5">
-                <h5 class="fw-bold text-dark mb-0"><i class="fas fa-book text-primary me-2"></i> Course Selection</h5>
-            </div>
-            <div class="card-body p-4 px-lg-5 pt-3">
-                <div class="d-flex align-items-center bg-primary bg-opacity-10 rounded-4 p-3 mb-3">
-                    <span class="badge bg-primary rounded-pill me-3 px-3 py-2">Choice 1</span>
-                    <strong class="text-primary">{{ application.get_first_choice_display }}</strong>
-                </div>
-                <div class="d-flex align-items-center bg-secondary bg-opacity-10 rounded-4 p-3">
-                    <span class="badge bg-secondary rounded-pill me-3 px-3 py-2">Choice 2</span>
-                    <strong class="text-secondary">{{ application.get_second_choice_display }}</strong>
-                </div>
-            </div>
-        </div>
-
-        {% if documents %}
-        <div class="card border-0 shadow-sm mb-5" style="border-radius: 20px;">
-            <div class="card-header bg-transparent border-bottom-0 pt-4 px-4 px-lg-5">
-                <h5 class="fw-bold text-dark mb-0"><i class="fas fa-file-upload text-primary me-2"></i> Submitted Files</h5>
-            </div>
-            <div class="card-body p-4 px-lg-5 pt-3">
-                <div class="row">
-                    {% for doc in documents %}
-                    <div class="col-md-6 mb-3">
-                        <div class="d-flex align-items-center justify-content-between border rounded-3 p-3 bg-light">
-                            <div class="text-truncate me-3">
-                                <i class="fas fa-file-pdf text-danger fs-4 me-2 align-middle"></i>
-                                <span class="fw-medium text-dark">{{ doc.get_document_type_display }}</span>
+                                {% else %}
+                                <div class="alert alert-chesf alert-chesf-warning py-2 mt-2 mb-0">
+                                    <i class="fas fa-history"></i> Awaiting Result
+                                </div>
+                                {% endif %}
                             </div>
-                            <a href="{{ doc.document_file.url }}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-none">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
                         </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
             </div>
-        </div>
-        {% endif %}
+            {% endif %}
 
-        <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-            <a href="{% url 'download_pdf' %}" class="btn btn-success px-5 py-3 rounded-pill fw-bold shadow-lg hover-lift">
-                <i class="fas fa-file-pdf me-2"></i> Download Digital PDF
-            </a>
-            <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary px-5 py-3 rounded-pill fw-bold hover-lift">
-                <i class="fas fa-home me-2"></i> Client Dashboard
-            </a>
+            <div class="card-chesf border-0 shadow-sm mb-4 fade-up">
+                <div class="card-header bg-transparent pb-0 px-4 px-lg-5 pt-4">
+                    <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">
+                        <i class="fas fa-book me-2" style="color:var(--chesf-primary);"></i> Course Selection
+                    </h5>
+                </div>
+                <div class="card-body px-4 px-lg-5 pt-3">
+                    <div class="d-flex align-items-center gap-3 p-3 rounded-3 mb-2" style="background:rgba(15,118,110,0.06);">
+                        <span class="badge badge-chesf badge-chesf-green" style="font-size:0.8rem;">1st Choice</span>
+                        <span class="fw-semibold" style="color:var(--chesf-primary);">{{ application.get_first_choice_display }}</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background:rgba(56,189,248,0.06);">
+                        <span class="badge badge-chesf badge-chesf-blue" style="font-size:0.8rem;">2nd Choice</span>
+                        <span class="fw-semibold" style="color:var(--chesf-accent-dark);">{{ application.get_second_choice_display }}</span>
+                    </div>
+                </div>
+            </div>
+
+            {% if documents %}
+            <div class="card-chesf border-0 shadow-sm mb-4 fade-up">
+                <div class="card-header bg-transparent pb-0 px-4 px-lg-5 pt-4">
+                    <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">
+                        <i class="fas fa-file-upload me-2" style="color:var(--chesf-primary);"></i> Uploaded Documents
+                    </h5>
+                </div>
+                <div class="card-body px-4 px-lg-5 pt-3">
+                    <div class="row">
+                        {% for doc in documents %}
+                        <div class="col-md-6 mb-2">
+                            <div class="d-flex align-items-center justify-content-between rounded-3 p-3" style="background:var(--chesf-bg-alt);">
+                                <div class="text-truncate me-2">
+                                    <i class="fas fa-file-pdf me-2" style="color:var(--chesf-danger);"></i>
+                                    <span class="fw-medium" style="color:var(--chesf-text-dark);font-size:0.9rem;">{{ doc.get_document_type_display }}</span>
+                                </div>
+                                <a href="{{ doc.document_file.url }}" target="_blank" class="btn btn-chesf-light btn-chesf-sm px-3" style="flex-shrink:0;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4 fade-up">
+                <a href="{% url 'download_pdf' %}" class="btn btn-chesf-primary btn-chesf-lg btn-chesf-rounded px-5 shadow-lg">
+                    <i class="fas fa-file-pdf me-2"></i> Download PDF
+                </a>
+                <a href="{% url 'dashboard' %}" class="btn btn-chesf-white btn-chesf-lg btn-chesf-rounded px-5">
+                    <i class="fas fa-home me-2"></i> Dashboard
+                </a>
+            </div>
         </div>
     </div>
 </div>

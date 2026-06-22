@@ -1,48 +1,49 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}Section B - Schools Attended{% endblock %}
+{% block title %}Schools Attended - CHESF Admission{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center pt-3 pb-5">
-    <div class="col-lg-10 col-xl-9">
-        {% include "portal/partials/stepper.html" with current_step=2 %}
-        
-        <div class="card border-0 shadow-lg mt-4" style="border-radius: 20px;">
-            <div class="card-header bg-transparent border-bottom-0 pt-5 pb-0 px-4 px-md-5">
-                <div class="d-flex align-items-center">
-                    <div class="bg-primary text-white bg-opacity-10 rounded p-3 me-3 text-primary shadow-sm">
-                        <i class="fas fa-school fs-4 text-primary"></i>
-                    </div>
-                    <div>
-                        <h3 class="fw-bold mb-0 text-dark">Schools Attended</h3>
-                        <p class="text-muted mt-1 mb-0">Record up to 3 educational institutions you have attended.</p>
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
+            {% include "portal/partials/stepper.html" with current_step=2 %}
+            <div class="card-chesf border-0 shadow-lg mt-4 fade-up">
+                <div class="card-header bg-transparent border-bottom-0 pt-4 pb-0 px-4 px-md-5">
+                    <div class="d-flex align-items-center gap-3 mb-1">
+                        <div style="width:48px;height:48px;border-radius:12px;background:rgba(15,118,110,0.1);display:flex;align-items:center;justify-content:center;color:var(--chesf-primary);font-size:1.2rem;">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-0" style="color:var(--chesf-text-dark);">Schools Attended</h4>
+                            <small style="color:var(--chesf-text-light);">List up to 3 educational institutions you have attended.</small>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-body p-4 p-md-5 pt-4">
-                <form method="post" novalidate>
-                    {% csrf_token %}
-                    {{ formset.management_form }}
-
-                    {% for form in formset %}
-                        <div class="card mb-4 border-0 shadow-sm bg-light bg-opacity-50" style="border-radius: 16px;">
-                            <div class="card-body p-4 py-4">
-                                <h5 class="fw-bold text-primary mb-3">Institution #{{ forloop.counter }}</h5>
-                                {{ form|crispy }}
+                <div class="card-body p-4 p-md-5 pt-3">
+                    <form method="post" novalidate class="form-chesf">
+                        {% csrf_token %}
+                        {{ formset.management_form }}
+                        {% for form in formset %}
+                            <div class="card-chesf mb-3" style="background:var(--chesf-bg-alt);border-color:transparent;">
+                                <div class="card-body p-4">
+                                    <h6 class="fw-bold mb-3" style="color:var(--chesf-primary);font-size:0.9rem;">
+                                        <i class="fas fa-building me-2"></i> Institution #{{ forloop.counter }}
+                                    </h6>
+                                    {{ form|crispy }}
+                                </div>
                             </div>
+                        {% endfor %}
+                        <div class="d-flex justify-content-between align-items-center mt-5 pt-4 border-top" style="border-color:rgba(15,118,110,0.08)!important;">
+                            <a href="{% url 'dashboard' %}" class="btn btn-chesf-light btn-chesf-rounded px-4">
+                                <i class="fas fa-arrow-left me-2"></i> Dashboard
+                            </a>
+                            <button type="submit" class="btn btn-chesf-primary btn-chesf-rounded px-5 py-2">
+                                Save & Continue <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
                         </div>
-                    {% endfor %}
-
-                    <div class="d-flex justify-content-between align-items-center mt-5 pt-4 border-top">
-                        <a href="{% url 'dashboard' %}" class="btn btn-light px-4 text-secondary fw-bold rounded-pill">
-                            <i class="fas fa-arrow-left me-2"></i> Dashboard
-                        </a>
-                        <button type="submit" class="btn btn-primary px-5 py-2 fw-bold text-white rounded-pill shadow-sm">
-                            Save &amp; Continue <i class="fas fa-arrow-right ms-2"></i>
-                        </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
