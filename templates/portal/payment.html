@@ -4,27 +4,26 @@
 
 {% block content %}
 <div class="container py-5">
-    <div class="row justify-content-center align-items-center" style="min-height:60vh;">
+    <div class="row justify-content-center" style="min-height:50vh;">
         <div class="col-md-8 col-lg-6 col-xl-5">
             <div class="fade-up">
-                <div class="card-chesf border-0 shadow-lg text-center" style="border:1px solid rgba(212,175,55,0.1)!important;">
-                    <div class="pt-5 pb-0 px-4">
-                        <div style="width:70px;height:70px;border-radius:16px;background:var(--chesf-gradient-warm);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;box-shadow:0 8px 24px rgba(212,175,55,0.25);">
-                            <i class="fas fa-credit-card fs-3" style="color:var(--chesf-text-dark);"></i>
+                <div class="card-chesf text-center">
+                    <div class="card-body p-5">
+                        <div style="width:64px;height:64px;border-radius:12px;background:var(--chesf-navy-dark);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                            <i class="fas fa-credit-card fs-4" style="color:var(--chesf-gold);"></i>
                         </div>
-                        <h3 class="fw-bold mb-0 gradient-text-warm">Secure Payment</h3>
-                    </div>
-                    <div class="card-body p-4 p-md-5 pt-3">
-                        <small style="color:var(--chesf-text-light);text-transform:uppercase;letter-spacing:1px;font-weight:600;font-size:0.75rem;">Application Fee</small>
-                        <h1 class="display-5 fw-bold mb-2 gradient-text-warm" style="font-size:3.5rem;">₦6,000</h1>
-                        <p class="small mb-4" style="color:var(--chesf-text-light);">Secured inline payment via Paystack</p>
-                        <button id="pay-button" class="btn btn-chesf-gold w-100 btn-chesf-lg btn-chesf-rounded mb-3 py-3 shadow-lg">
+                        <h3 style="font-weight:800;color:var(--chesf-navy-dark);margin-bottom:0.25rem;">Secure Payment</h3>
+                        <div style="margin:1rem 0 1.25rem;">
+                            <small style="color:var(--chesf-text-light);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;font-size:0.7rem;">Application Fee</small>
+                            <h2 style="font-weight:900;color:var(--chesf-navy-dark);font-size:2.5rem;margin-bottom:0.25rem;">₦6,000</h2>
+                            <p style="font-size:0.85rem;color:var(--chesf-text-light);margin-bottom:0;">Secured payment via Paystack</p>
+                        </div>
+                        <button id="pay-button" class="btn btn-chesf-primary w-100 py-3 mb-3">
                             <i class="fas fa-lock me-2"></i> Pay Securely Now
                         </button>
-                        <div class="d-flex justify-content-center align-items-center gap-3 mt-3">
-                            <i class="fas fa-shield-alt" style="color:var(--chesf-success);font-size:1.2rem;"></i>
+                        <div class="d-flex justify-content-center align-items-center gap-2">
+                            <i class="fas fa-shield-alt" style="color:var(--chesf-success);font-size:1rem;"></i>
                             <small style="color:var(--chesf-text-light);">End-to-end encrypted</small>
-                            <i class="fas fa-lock" style="color:var(--chesf-purple);font-size:1rem;"></i>
                         </div>
                     </div>
                 </div>

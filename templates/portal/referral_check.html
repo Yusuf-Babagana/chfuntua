@@ -5,37 +5,35 @@
 
 {% block content %}
 <div class="container py-5">
-    <div class="row justify-content-center align-items-center" style="min-height:60vh;">
+    <div class="row justify-content-center" style="min-height:50vh;">
         <div class="col-md-10 col-lg-8 col-xl-6">
             <div class="fade-up">
-                <div class="card-chesf border-0 shadow-lg" style="border:1px solid rgba(139,92,246,0.08)!important;">
-                    <div class="text-center pt-5 pb-0 px-4">
-                        <div style="width:70px;height:70px;border-radius:16px;background:var(--chesf-gradient-vibrant);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;box-shadow:0 8px 24px rgba(139,92,246,0.2);">
-                            <i class="fas fa-ticket-alt fs-3 text-white"></i>
+                <div class="card-chesf text-center">
+                    <div class="card-body p-5">
+                        <div style="width:64px;height:64px;border-radius:12px;background:var(--chesf-navy-dark);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                            <i class="fas fa-ticket-alt fs-4" style="color:var(--chesf-gold);"></i>
                         </div>
-                        <h3 class="fw-bold mb-2 gradient-text-vibrant">Referral Code or Payment</h3>
-                        <p style="color:var(--chesf-text-light);margin-bottom:0.25rem;">Waive the application fee with a referral code or proceed to pay.</p>
-                    </div>
-                    <div class="card-body p-4 p-md-5 pt-3">
-                        <form method="post" class="form-chesf">
+                        <h3 style="font-weight:800;color:var(--chesf-navy-dark);margin-bottom:0.25rem;">Referral Code or Payment</h3>
+                        <p style="color:var(--chesf-text);margin-bottom:1.5rem;">Waive the application fee with a referral code or proceed to pay.</p>
+                        <form method="post" class="form-chesf text-start">
                             {% csrf_token %}
-                            <div class="p-4 rounded-3 mb-4" style="background:linear-gradient(135deg,rgba(139,92,246,0.04),rgba(15,118,110,0.04));border:1px solid rgba(139,92,246,0.08);">
-                                <label class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.9rem;">
-                                    <i class="fas fa-hashtag me-2" style="color:var(--chesf-purple);"></i> Referral Code
+                            <div style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:1.25rem;margin-bottom:1.25rem;">
+                                <label style="font-weight:700;color:var(--chesf-navy);font-size:0.85rem;margin-bottom:0.5rem;display:block;">
+                                    <i class="fas fa-hashtag me-2" style="color:var(--chesf-primary);"></i> Referral Code
                                 </label>
                                 {{ form.code }}
                                 <small style="color:var(--chesf-text-light);margin-top:0.25rem;display:block;">
                                     If you have a referral code, enter it above.
                                 </small>
                             </div>
-                            <div class="d-flex flex-column flex-md-row gap-3 mt-4">
-                                <button type="submit" class="btn btn-chesf-success btn-chesf-lg flex-grow-1 btn-chesf-rounded">
+                            <div class="d-flex flex-column flex-md-row gap-3 mt-3">
+                                <button type="submit" class="btn btn-chesf-success flex-grow-1 py-2">
                                     <i class="fas fa-check me-2"></i> Apply Code
                                 </button>
                                 <div class="d-flex align-items-center justify-content-center fw-bold" style="color:var(--chesf-text-light);">OR</div>
-                                    <a href="{% url 'payment' %}" class="btn btn-chesf-gold btn-chesf-lg flex-grow-1 btn-chesf-rounded">
-                                        <i class="fas fa-credit-card me-2"></i> Pay ₦6,000
-                                    </a>
+                                <a href="{% url 'payment' %}" class="btn btn-chesf-gold flex-grow-1 py-2">
+                                    <i class="fas fa-credit-card me-2"></i> Pay ₦6,000
+                                </a>
                             </div>
                         </form>
                     </div>
