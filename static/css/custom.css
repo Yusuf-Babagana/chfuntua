@@ -1,26 +1,26 @@
 :root {
-  --chesf-primary: #0F5C4B;
-  --chesf-primary-dark: #0A3D32;
-  --chesf-primary-light: #1A7A64;
-  --chesf-primary-lighter: #2D9F7E;
-  --chesf-primary-bg: #E8F5F1;
-  --chesf-primary-bg-alt: #D4EDE6;
-  --chesf-bg: #F8FAF9;
-  --chesf-bg-alt: #EFF5F2;
+  --chesf-primary: #006D77;
+  --chesf-primary-dark: #00535C;
+  --chesf-primary-light: #83C5BE;
+  --chesf-primary-lighter: #A8DADC;
+  --chesf-primary-bg: #E8F4F4;
+  --chesf-primary-bg-alt: #D4ECEC;
+  --chesf-bg: #F8F9FA;
+  --chesf-bg-alt: #EFF1F2;
   --chesf-text: #374151;
   --chesf-text-dark: #111827;
   --chesf-text-light: #9CA3AF;
   --chesf-white: #FFFFFF;
-  --chesf-border: #DCE8E3;
-  --chesf-border-light: #EDF3F0;
-  --chesf-success: #059669;
-  --chesf-warning: #D97706;
-  --chesf-danger: #DC2626;
-  --chesf-info: #2563EB;
-  --chesf-shadow-sm: 0 1px 2px rgba(15, 92, 75, 0.05);
-  --chesf-shadow: 0 4px 6px -1px rgba(15, 92, 75, 0.07), 0 2px 4px -2px rgba(15, 92, 75, 0.04);
-  --chesf-shadow-lg: 0 10px 15px -3px rgba(15, 92, 75, 0.07), 0 4px 6px -4px rgba(15, 92, 75, 0.03);
-  --chesf-shadow-xl: 0 20px 25px -5px rgba(15, 92, 75, 0.08), 0 8px 10px -6px rgba(15, 92, 75, 0.03);
+  --chesf-border: #D4E0E0;
+  --chesf-border-light: #E4ECEC;
+  --chesf-success: #2A9D8F;
+  --chesf-warning: #E9C46A;
+  --chesf-danger: #E76F51;
+  --chesf-info: #457B9D;
+  --chesf-shadow-sm: 0 1px 2px rgba(0, 109, 119, 0.05);
+  --chesf-shadow: 0 4px 6px -1px rgba(0, 109, 119, 0.07), 0 2px 4px -2px rgba(0, 109, 119, 0.04);
+  --chesf-shadow-lg: 0 10px 15px -3px rgba(0, 109, 119, 0.07), 0 4px 6px -4px rgba(0, 109, 119, 0.03);
+  --chesf-shadow-xl: 0 20px 25px -5px rgba(0, 109, 119, 0.08), 0 8px 10px -6px rgba(0, 109, 119, 0.03);
   --chesf-radius: 12px;
   --chesf-radius-sm: 8px;
   --chesf-radius-lg: 16px;
@@ -31,7 +31,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--chesf-bg);
   color: var(--chesf-text);
   min-height: 100vh;
@@ -209,7 +209,7 @@ img {
 }
 
 .btn-chesf-success:hover {
-  background: #047857;
+  background: #238C7E;
   color: white;
   transform: translateY(-1px);
 }
@@ -261,7 +261,7 @@ img {
 .form-chesf .form-control:focus,
 .form-chesf .form-select:focus {
   border-color: var(--chesf-primary);
-  box-shadow: 0 0 0 3px rgba(15, 92, 75, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 109, 119, 0.1);
 }
 
 .form-chesf label {
@@ -283,9 +283,9 @@ img {
 }
 
 .alert-chesf-success {
-  background: #ECFDF5;
-  color: #065F46;
-  border: 1px solid #A7F3D0;
+  background: #E0F2F1;
+  color: #006D77;
+  border: 1px solid #80CBC4;
 }
 
 .alert-chesf-error {
@@ -295,9 +295,9 @@ img {
 }
 
 .alert-chesf-warning {
-  background: #FFFBEB;
-  color: #92400E;
-  border: 1px solid #FDE68A;
+  background: #E8F4F4;
+  color: #00535C;
+  border: 1px solid #A8DADC;
 }
 
 .alert-chesf-info {
@@ -433,7 +433,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   margin-bottom: 0.7rem;
-  border: 1px solid rgba(15, 92, 75, 0.12);
+  border: 1px solid rgba(0, 109, 119, 0.12);
 }
 
 .section-title h2 {
@@ -730,8 +730,8 @@ img {
 }
 
 .badge-chesf-green {
-  background: #ECFDF5;
-  color: #065F46;
+  background: #E0F2F1;
+  color: #006D77;
 }
 
 .badge-chesf-blue {
@@ -739,9 +739,9 @@ img {
   color: #1E40AF;
 }
 
-.badge-chesf-yellow {
-  background: #FFFBEB;
-  color: #92400E;
+.badge-chesf-teal {
+  background: #E8F4F4;
+  color: #00535C;
 }
 
 .badge-chesf-red {
@@ -766,9 +766,9 @@ img {
 }
 
 .counter-pill-green {
-  background: #ECFDF5;
-  color: #065F46;
-  border: 1px solid #A7F3D0;
+  background: #E0F2F1;
+  color: #006D77;
+  border: 1px solid #80CBC4;
 }
 
 .counter-pill-purple {
@@ -777,14 +777,14 @@ img {
   border: 1px solid #E9D5FF;
 }
 
-.counter-pill-gold {
-  background: #FFFBEB;
-  color: #92400E;
-  border: 1px solid #FDE68A;
+.counter-pill-teal {
+  background: #E8F4F4;
+  color: #00535C;
+  border: 1px solid #A8DADC;
 }
 
 /* ===== DECORATIVE ===== */
-.green-divider {
+.teal-divider {
   width: 50px;
   height: 3px;
   background: var(--chesf-primary);
