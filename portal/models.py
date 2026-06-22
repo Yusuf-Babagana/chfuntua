@@ -11,6 +11,7 @@ class Programme(models.Model):
         ('nd', 'National Diploma'),
         ('dip', 'Diploma'),
         ('cert', 'Certificate'),
+        ('hnd', 'Higher National Diploma'),
         ('retraining', 'Retraining'),
     ]
 
@@ -105,15 +106,17 @@ class Application(models.Model):
     ]
 
     COURSES = [
-        ('nd_chew', 'National Diploma in Community Health (ND CHEW)'),
-        ('dip_env_health', 'Diploma in Environmental Health'),
-        ('dip_him', 'Diploma in Health Information Management'),
-        ('dip_xray', 'Diploma in X-Ray and Imaging Technology'),
-        ('dip_nutrition', 'Diploma in Nutrition and Dietetics'),
-        ('cert_jchew', 'Certificate in Community Health (JCHEW)'),
-        ('retraining_jchew', 'Retraining Programme in Community Health'),
-        ('dip_pharmacy', 'Diploma in Pharmacy Technology'),
+        ('nd_chew', 'National Diploma in Community Health (ND-CHEW)'),
+        ('chew', 'Diploma in Community Health Extension Worker (CHEW)'),
+        ('jchew', 'Junior Community Health Extension Workers (JCHEW)'),
+        ('nd_env_health', 'National Diploma in Environmental Health (ND)'),
+        ('hnd_env_health', 'Higher National Diploma in Environmental Health (HND)'),
+        ('him', 'Diploma in Health Information Management (HIM)'),
+        ('hpe', 'Diploma in Health Promotion & Education (HPE)'),
+        ('dph', 'Diploma in Public Health (DPH)'),
     ]
+
+    HND_COURSES = ['hnd_env_health']
 
     student = models.OneToOneField(Student, on_delete=models.CASCADE, related_name='application')
     application_number = models.CharField(max_length=20, unique=True, blank=True)

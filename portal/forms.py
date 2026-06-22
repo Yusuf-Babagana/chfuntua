@@ -120,23 +120,25 @@ class SectionDForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        allowed_course = [
-            ('', '---------'),
-            ('nd_chew', 'National Diploma in Community Health (ND CHEW)'),
-            ('dip_env_health', 'Diploma in Environmental Health'),
-            ('dip_him', 'Diploma in Health Information Management'),
-            ('dip_xray', 'Diploma in X-Ray and Imaging Technology'),
-            ('dip_nutrition', 'Diploma in Nutrition and Dietetics'),
-            ('cert_jchew', 'Certificate in Community Health (JCHEW)'),
-            ('retraining_jchew', 'Retraining Programme in Community Health'),
-            ('dip_pharmacy', 'Diploma in Pharmacy Technology'),
-        ]
+        allowed_course = [('', '---------')] + list(Application.COURSES)
         self.fields['first_choice'].choices = allowed_course
         self.fields['second_choice'].choices = allowed_course
-        
+
         for field in self.fields:
             if field != 'application_type':
                 self.fields[field].widget.attrs.update({'class': 'form-control'})
+
+    def clean(self):
+        cleaned_data = super().clean()
+        first_choice = cleaned_data.get('first_choice')
+        application_type = cleaned_data.get('application_type')
+
+        hnd_courses = getattr(Application, 'HND_COURSES', [])
+        if first_choice in hnd_courses and application_type == 'non_jamb':
+            raise forms.ValidationError(
+                'HND programmes require a JAMB number. Please select "With JAMB" or choose a different programme.'
+            )
+        return cleaned_data
 
 
 class SectionEForm(forms.ModelForm):
