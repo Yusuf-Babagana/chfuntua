@@ -1,8 +1,38 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.core.exceptions import ValidationError
 import random
 import string
+
+
+class Programme(models.Model):
+    CATEGORY_CHOICES = [
+        ('nd', 'National Diploma'),
+        ('dip', 'Diploma'),
+        ('cert', 'Certificate'),
+        ('retraining', 'Retraining'),
+    ]
+
+    name = models.CharField(max_length=200)
+    code = models.CharField(max_length=50, unique=True, help_text="Short code (e.g., ND-CHEW)")
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='dip')
+    duration = models.CharField(max_length=100, blank=True, default='2 Years')
+    description = models.TextField(blank=True)
+    admission_requirements = models.TextField(blank=True, help_text="Entry requirements for this programme")
+    tuition_fee = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    accreditation_body = models.CharField(max_length=200, blank=True, help_text="e.g., CHPRBN, WAHEB")
+    icon = models.CharField(max_length=50, blank=True, help_text="Font Awesome icon class (e.g., fa-heartbeat)")
+    order = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['order', 'name']
+        verbose_name = "Programme"
+        verbose_name_plural = "Programmes"
+
+    def __str__(self):
+        return self.name
 
 
 class ReferralCode(models.Model):
@@ -62,25 +92,33 @@ class Payment(models.Model):
 
 
 class Application(models.Model):
-    APPLICATION_STATUS = (
+    APPLICATION_STATUS = [
         ('draft', 'Draft'),
         ('submitted', 'Submitted'),
         ('approved', 'Approved'),
         ('rejected', 'Rejected'),
-    )
+    ]
 
-    COURSES = (
-        ('diploma_schew', 'National Diploma in Community Health (ND CHEW)'),
-        ('certificate_jchew', 'Certificate in Community Health (JCHEW)'),
-        ('diploma_him', 'Diploma in Health Information Management'),
-        ('diploma_env_health', 'Diploma in Environmental Health'),
-        ('diploma_xray', 'Diploma in X-Ray and Imaging Technology'),
-        ('diploma_nutrition', 'Diploma in Nutrition and Dietetics'),
+    APPLICATION_TYPES = [
+        ('jamb', 'With JAMB'),
+        ('non_jamb', 'Without JAMB'),
+    ]
+
+    COURSES = [
+        ('nd_chew', 'National Diploma in Community Health (ND CHEW)'),
+        ('dip_env_health', 'Diploma in Environmental Health'),
+        ('dip_him', 'Diploma in Health Information Management'),
+        ('dip_xray', 'Diploma in X-Ray and Imaging Technology'),
+        ('dip_nutrition', 'Diploma in Nutrition and Dietetics'),
+        ('cert_jchew', 'Certificate in Community Health (JCHEW)'),
         ('retraining_jchew', 'Retraining Programme in Community Health'),
-    )
+        ('dip_pharmacy', 'Diploma in Pharmacy Technology'),
+    ]
 
     student = models.OneToOneField(Student, on_delete=models.CASCADE, related_name='application')
     application_number = models.CharField(max_length=20, unique=True, blank=True)
+
+    application_type = models.CharField(max_length=20, choices=APPLICATION_TYPES, default='jamb')
 
     passport_photo = models.ImageField(upload_to='passports/', blank=True, null=True)
     first_name = models.CharField(max_length=100, blank=True)

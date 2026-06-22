@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import inlineformset_factory
-from .models import Application, SchoolAttended, SSCEResult, UploadedDocument
+from .models import Application, SchoolAttended, SSCEResult, UploadedDocument, Programme
 
 
 class SignupForm(UserCreationForm):
@@ -113,17 +113,30 @@ SSCEResultFormSet = inlineformset_factory(
 class SectionDForm(forms.ModelForm):
     class Meta:
         model = Application
-        fields = ['first_choice', 'second_choice']
+        fields = ['application_type', 'first_choice', 'second_choice']
+        widgets = {
+            'application_type': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Restrict courses in the template while preserving models
-        allowed_course = [('', '---------'), ('diploma_schew', 'National Diploma in Community Health (ND CHEW)'), ('certificate_jchew', 'Certificate in Community Health (JCHEW)'), ('diploma_him', 'Diploma in Health Information Management'), ('diploma_env_health', 'Diploma in Environmental Health'), ('diploma_xray', 'Diploma in X-Ray and Imaging Technology'), ('diploma_nutrition', 'Diploma in Nutrition and Dietetics'), ('retraining_jchew', 'Retraining Programme in Community Health')]
+        allowed_course = [
+            ('', '---------'),
+            ('nd_chew', 'National Diploma in Community Health (ND CHEW)'),
+            ('dip_env_health', 'Diploma in Environmental Health'),
+            ('dip_him', 'Diploma in Health Information Management'),
+            ('dip_xray', 'Diploma in X-Ray and Imaging Technology'),
+            ('dip_nutrition', 'Diploma in Nutrition and Dietetics'),
+            ('cert_jchew', 'Certificate in Community Health (JCHEW)'),
+            ('retraining_jchew', 'Retraining Programme in Community Health'),
+            ('dip_pharmacy', 'Diploma in Pharmacy Technology'),
+        ]
         self.fields['first_choice'].choices = allowed_course
         self.fields['second_choice'].choices = allowed_course
         
         for field in self.fields:
-            self.fields[field].widget.attrs.update({'class': 'form-control'})
+            if field != 'application_type':
+                self.fields[field].widget.attrs.update({'class': 'form-control'})
 
 
 class SectionEForm(forms.ModelForm):

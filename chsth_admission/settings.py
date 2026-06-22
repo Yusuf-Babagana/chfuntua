@@ -114,10 +114,10 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # Jazzmin Admin Settings
 JAZZMIN_SETTINGS = {
     "site_title": "CHESF Admin",
-    "site_header": "CHESF Admission Portal",
+    "site_header": "College of Health and Environmental Sciences Funtua",
     "site_brand": "CHESF",
     "site_logo": None,
-    "welcome_sign": "Welcome to CHESF Administration",
+    "welcome_sign": "Welcome to CHESF Administration — Knowledge for Health and Sustainable Environment",
     "copyright": "College of Health and Environmental Sciences Funtua",
     "search_model": ["auth.User", "portal.Application"],
     "user_avatar": None,
@@ -172,7 +172,7 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_legacy_style": False,
     "sidebar_nav_flat_style": False,
     "theme": "darkly",
-    "dark_mode_theme": "darkly",
+    "default_theme_mode": "dark",
     "button_classes": {
         "primary": "btn-primary",
         "secondary": "btn-secondary",
@@ -192,4 +192,11 @@ LOGOUT_REDIRECT_URL = 'home'
 PAYSTACK_PUBLIC_KEY = config('PAYSTACK_PUBLIC_KEY')
 PAYSTACK_SECRET_KEY = config('PAYSTACK_SECRET_KEY')
 
-APPLICATION_FEE = 12550
+APPLICATION_FEE = 6000
+
+# CHESF College Constants
+CHESF_MOTTO = "Knowledge for Health and Sustainable Environment"
+CHESF_SESSION = "2026/2027"
+CHESF_PHONE = "09035068809"
+CHESF_EMAIL = "shesf@yahoo.com"
+CHESF_ADDRESS = "P.M.B 6043 Kabomo Road, After Railway Crossing, Tudun Wada, Funtua, Katsina State, Nigeria"

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}Course Selection - CHESF Admission{% endblock %}
+{% block title %}Programme Selection - CHESF Admission{% endblock %}
 
 {% block content %}
 <div class="container py-4">
@@ -23,7 +23,27 @@
                 <div class="card-body p-4 p-md-5 pt-3">
                     <form method="post" novalidate class="form-chesf">
                         {% csrf_token %}
-                        {{ form|crispy }}
+                        
+                        <h6 class="fw-bold mb-3" style="color:var(--chesf-primary);font-size:0.9rem;">
+                            <i class="fas fa-user-check me-2"></i> Application Type
+                        </h6>
+                        <div class="mb-4 p-4 rounded-3" style="background:rgba(15,118,110,0.04);">
+                            {% for radio in form.application_type %}
+                            <div class="form-check form-check-inline me-4">
+                                {{ radio.tag }}
+                                <label class="form-check-label fw-semibold" for="{{ radio.id_for_label }}" style="color:var(--chesf-text-dark);">
+                                    {{ radio.choice_label }}
+                                </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <h6 class="fw-bold mb-3" style="color:var(--chesf-primary);font-size:0.9rem;">
+                            <i class="fas fa-book me-2"></i> Programme Selection
+                        </h6>
+                        {{ form.first_choice|as_crispy_field }}
+                        {{ form.second_choice|as_crispy_field }}
+                        
                         <div class="d-flex justify-content-between align-items-center mt-5 pt-4 border-top" style="border-color:rgba(15,118,110,0.08)!important;">
                             <a href="{% url 'dashboard' %}" class="btn btn-chesf-light btn-chesf-rounded px-4">
                                 <i class="fas fa-arrow-left me-2"></i> Dashboard

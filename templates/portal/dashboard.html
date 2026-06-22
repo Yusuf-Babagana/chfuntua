@@ -41,6 +41,10 @@
                     <span class="fw-bold" style="color:var(--chesf-text-dark);font-size:0.85rem;">{{ application.application_number }}</span>
                 </div>
                 {% endif %}
+                <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top" style="border-color:rgba(15,118,110,0.06)!important;">
+                    <span class="dash-stat-label">App. Type</span>
+                    <span class="fw-bold" style="color:var(--chesf-text-dark);font-size:0.85rem;">{{ application.get_application_type_display }}</span>
+                </div>
             </div>
         </div>
     </div>

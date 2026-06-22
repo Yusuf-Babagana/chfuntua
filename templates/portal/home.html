@@ -7,18 +7,30 @@
 
 <!-- ===== HERO SECTION ===== -->
 <section class="hero-chesf">
+    <div class="hero-gold-accent"></div>
     <div class="container position-relative">
         <div class="row align-items-center min-vh-75">
             <div class="col-lg-7 mb-5 mb-lg-0 pe-lg-5 text-center text-lg-start fade-up">
                 <span class="badge bg-white text-chesf-primary rounded-pill px-4 py-2 mb-3 fw-semibold shadow-sm">
-                    <i class="fas fa-bullhorn me-1"></i> 2025/2026 Admissions Now Open
+                    <i class="fas fa-bullhorn me-1"></i> {{ "2026/2027" }} Admissions Now Open
                 </span>
                 <h1 class="display-4 fw-extrabold mb-4" style="font-weight:900;letter-spacing:-1.5px;color:var(--chesf-text-dark);line-height:1.15;">
                     Shape Your Future at <span style="color:var(--chesf-primary);">CHESF</span>
                 </h1>
-                <p class="lead mb-5" style="color:var(--chesf-text-light);font-size:1.15rem;line-height:1.8;max-width:540px;">
-                    Join the College of Health and Environmental Sciences Funtua — where academic excellence meets professional distinction in healthcare and environmental sciences.
+                <p class="lead mb-4" style="color:var(--chesf-text-light);font-size:1.1rem;line-height:1.8;max-width:560px;">
+                    Join the College of Health and Environmental Sciences Funtua — an <strong>NBTE-approved</strong> institution committed to <strong>"Knowledge for Health and Sustainable Environment."</strong>
                 </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="badge rounded-pill px-3 py-2" style="background:rgba(212,175,55,0.12);color:var(--chesf-gold-dark);border:1px solid rgba(212,175,55,0.2);">
+                        <i class="fas fa-check-circle me-1"></i> CHPRBN Accredited
+                    </span>
+                    <span class="badge rounded-pill px-3 py-2" style="background:rgba(212,175,55,0.12);color:var(--chesf-gold-dark);border:1px solid rgba(212,175,55,0.2);">
+                        <i class="fas fa-check-circle me-1"></i> WAHEB Approved
+                    </span>
+                    <span class="badge rounded-pill px-3 py-2" style="background:rgba(212,175,55,0.12);color:var(--chesf-gold-dark);border:1px solid rgba(212,175,55,0.2);">
+                        <i class="fas fa-check-circle me-1"></i> EHCON Recognised
+                    </span>
+                </div>
                 <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
                     <a href="{% url 'signup' %}" class="btn btn-chesf-primary btn-chesf-lg btn-chesf-rounded px-5 shadow-lg">
                         <i class="fas fa-rocket me-2"></i> Apply Now
@@ -36,36 +48,84 @@
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
                             <div class="text-start">
-                                <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);font-size:0.95rem;">Featured Program</h5>
-                                <small style="color:var(--chesf-text-light);">2025/2026 Session</small>
+                                <h5 class="fw-bold mb-0" style="color:var(--chesf-text-dark);font-size:0.95rem;">Admissions Open</h5>
+                                <small style="color:var(--chesf-text-light);">{{ "2026/2027" }} Session</small>
                             </div>
                         </div>
                         <div class="text-start">
                             <div class="d-flex align-items-center gap-2 mb-2">
                                 <i class="fas fa-check-circle" style="color:var(--chesf-success);"></i>
-                                <span class="fw-semibold" style="color:var(--chesf-text-dark);">National Diploma in Community Health</span>
+                                <span class="fw-semibold" style="color:var(--chesf-text-dark);font-size:0.9rem;">ND Community Health (CHEW)</span>
                             </div>
                             <div class="d-flex align-items-center gap-2 mb-2">
                                 <i class="fas fa-check-circle" style="color:var(--chesf-success);"></i>
-                                <span class="fw-semibold" style="color:var(--chesf-text-dark);">Diploma in Environmental Health</span>
+                                <span class="fw-semibold" style="color:var(--chesf-text-dark);font-size:0.9rem;">Diploma in Environmental Health</span>
                             </div>
-                            <div class="d-flex align-items-center gap-2 mb-3">
+                            <div class="d-flex align-items-center gap-2 mb-2">
                                 <i class="fas fa-check-circle" style="color:var(--chesf-success);"></i>
-                                <span class="fw-semibold" style="color:var(--chesf-text-dark);">Certificate in Community Health</span>
+                                <span class="fw-semibold" style="color:var(--chesf-text-dark);font-size:0.9rem;">Diploma in Pharmacy Technology</span>
                             </div>
-                            <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background:rgba(15,118,110,0.06);">
+                            <div class="d-flex align-items-center gap-3 p-3 rounded-3 mt-3" style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.12);">
                                 <div>
-                                    <small style="color:var(--chesf-text-light);font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Application Fee</small>
-                                    <h3 class="fw-bold mb-0" style="color:var(--chesf-primary);">₦12,550</h3>
+                                    <small style="color:var(--chesf-text-light);font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Application Fee</small>
+                                    <h3 class="fw-bold mb-0" style="color:var(--chesf-primary);">₦6,000</h3>
                                 </div>
                                 <div class="ms-auto">
-                                    <span class="badge bg-white text-chesf-primary rounded-pill px-3 py-2 shadow-sm"><i class="fas fa-shield-alt me-1"></i> Secure</span>
+                                    <span class="badge bg-white text-chesf-gold rounded-pill px-3 py-2 shadow-sm" style="border:1px solid rgba(212,175,55,0.2);"><i class="fas fa-shield-alt me-1"></i> Secure</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="position-absolute top-0 end-0 translate-middle-y" style="z-index:-1;">
-                        <div style="width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(15,118,110,0.1),transparent);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ACCREDITATION BODIES ===== -->
+<section class="py-4" style="background:white;border-bottom:1px solid rgba(15,118,110,0.06);">
+    <div class="container">
+        <div class="row align-items-center g-3">
+            <div class="col-lg-3 text-center text-lg-start mb-2 mb-lg-0">
+                <small class="fw-bold text-uppercase" style="color:var(--chesf-text-light);letter-spacing:1px;font-size:0.7rem;">Accredited &amp; Approved By</small>
+            </div>
+            <div class="col-lg-9">
+                <div class="row g-2 justify-content-center">
+                    <div class="col-6 col-md-3">
+                        <div class="accredit-badge w-100 justify-content-center">
+                            <div class="accredit-icon"><i class="fas fa-certificate"></i></div>
+                            <div>
+                                <div class="accredit-name">NBTE</div>
+                                <div class="accredit-label">National Board for Technical Education</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="accredit-badge w-100 justify-content-center">
+                            <div class="accredit-icon"><i class="fas fa-heartbeat"></i></div>
+                            <div>
+                                <div class="accredit-name">CHPRBN</div>
+                                <div class="accredit-label">Community Health Registration Board</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="accredit-badge w-100 justify-content-center">
+                            <div class="accredit-icon"><i class="fas fa-globe-africa"></i></div>
+                            <div>
+                                <div class="accredit-name">WAHEB</div>
+                                <div class="accredit-label">W. African Health Examination Board</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="accredit-badge w-100 justify-content-center">
+                            <div class="accredit-icon"><i class="fas fa-leaf"></i></div>
+                            <div>
+                                <div class="accredit-name">EHCON</div>
+                                <div class="accredit-label">Environmental Health Council</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,17 +151,17 @@
                     <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-2" style="width:44px;height:44px;background:rgba(16,185,129,0.1);color:var(--chesf-success);font-size:1.1rem;">
                         <i class="fas fa-book-open"></i>
                     </div>
-                    <div class="dash-stat-value mb-0">7+</div>
-                    <div class="dash-stat-label">Programs Offered</div>
+                    <div class="dash-stat-value mb-0">8</div>
+                    <div class="dash-stat-label">Programmes Offered</div>
                 </div>
             </div>
             <div class="col-6 col-lg-3 fade-up fade-up-delay-2">
                 <div class="stat-card">
-                    <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-2" style="width:44px;height:44px;background:rgba(56,189,248,0.1);color:var(--chesf-accent-dark);font-size:1.1rem;">
-                        <i class="fas fa-chalkboard-user"></i>
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-2" style="width:44px;height:44px;background:rgba(212,175,55,0.12);color:var(--chesf-gold-dark);font-size:1.1rem;">
+                        <i class="fas fa-award"></i>
                     </div>
-                    <div class="dash-stat-value mb-0">50+</div>
-                    <div class="dash-stat-label">Faculty Members</div>
+                    <div class="dash-stat-value mb-0">4</div>
+                    <div class="dash-stat-label">Accreditation Bodies</div>
                 </div>
             </div>
             <div class="col-6 col-lg-3 fade-up fade-up-delay-3">
@@ -117,222 +177,43 @@
     </div>
 </section>
 
-<!-- ===== PROGRAMS SECTION ===== -->
+<!-- ===== ABOUT CHESF ===== -->
 <section class="py-5" style="background:var(--chesf-bg);">
-    <div class="container">
-        <div class="section-title fade-up">
-            <span class="badge">Our Programs</span>
-            <h2>Academic Programs</h2>
-            <p>Explore our range of accredited programs designed to produce competent healthcare and environmental professionals.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3 fade-up">
-                <div class="program-card">
-                    <div class="program-icon" style="background:rgba(15,118,110,0.1);color:var(--chesf-primary);">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Diploma in Community Health</h5>
-                    <p class="small mb-0" style="color:var(--chesf-text-light);">National Diploma (ND) training community health extension workers.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 fade-up fade-up-delay-1">
-                <div class="program-card">
-                    <div class="program-icon" style="background:rgba(16,185,129,0.1);color:var(--chesf-success);">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Certificate in Community Health</h5>
-                    <p class="small mb-0" style="color:var(--chesf-text-light);">Junior Community Health Extension Worker (JCHEW) program.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 fade-up fade-up-delay-2">
-                <div class="program-card">
-                    <div class="program-icon" style="background:rgba(56,189,248,0.1);color:var(--chesf-accent-dark);">
-                        <i class="fas fa-notes-medical"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Health Information Management</h5>
-                    <p class="small mb-0" style="color:var(--chesf-text-light);">Diploma program in health records and information management.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 fade-up fade-up-delay-3">
-                <div class="program-card">
-                    <div class="program-icon" style="background:rgba(245,158,11,0.1);color:var(--chesf-warning);">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Environmental Health</h5>
-                    <p class="small mb-0" style="color:var(--chesf-text-light);">Diploma in Environmental Health and sanitation management.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
-                <div class="program-card">
-                    <div class="program-icon" style="background:rgba(99,102,241,0.1);color:#6366F1;">
-                        <i class="fas fa-x-ray"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">X-Ray & Imaging</h5>
-                    <p class="small mb-0" style="color:var(--chesf-text-light);">Diploma in radiography and diagnostic imaging technology.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
-                <div class="program-card">
-                    <div class="program-icon" style="background:rgba(244,63,94,0.1);color:#F43F5E;">
-                        <i class="fas fa-apple-alt"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Nutrition & Dietetics</h5>
-                    <p class="small mb-0" style="color:var(--chesf-text-light);">Diploma in nutrition science and dietary management.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
-                <div class="program-card">
-                    <div class="program-icon" style="background:rgba(139,92,246,0.1);color:#8B5CF6;">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Retraining in Community Health</h5>
-                    <p class="small mb-0" style="color:var(--chesf-text-light);">Advanced training program for JCHEW certificate holders.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== WHY CHOOSE CHESF ===== -->
-<section class="py-5" style="background:white;">
-    <div class="container">
-        <div class="section-title fade-up">
-            <span class="badge">Why CHESF</span>
-            <h2>Why Choose CHESF?</h2>
-            <p>Discover what makes the College of Health and Environmental Sciences Funtua the right choice for your academic journey.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 fade-up">
-                <div class="why-card">
-                    <div class="why-icon" style="background:rgba(15,118,110,0.1);color:var(--chesf-primary);">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <div>
-                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Accredited Programs</h6>
-                        <p class="small mb-0" style="color:var(--chesf-text-light);">All our programs are fully accredited by relevant regulatory bodies ensuring your qualification is recognized nationwide.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 fade-up fade-up-delay-1">
-                <div class="why-card">
-                    <div class="why-icon" style="background:rgba(16,185,129,0.1);color:var(--chesf-success);">
-                        <i class="fas fa-chalkboard-user"></i>
-                    </div>
-                    <div>
-                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Experienced Faculty</h6>
-                        <p class="small mb-0" style="color:var(--chesf-text-light);">Learn from highly qualified lecturers and industry professionals committed to your academic success.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 fade-up fade-up-delay-2">
-                <div class="why-card">
-                    <div class="why-icon" style="background:rgba(56,189,248,0.1);color:var(--chesf-accent-dark);">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <div>
-                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Modern Facilities</h6>
-                        <p class="small mb-0" style="color:var(--chesf-text-light);">Well-equipped laboratories, libraries, and conducive learning environment for practical skill development.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 fade-up fade-up-delay-3">
-                <div class="why-card">
-                    <div class="why-icon" style="background:rgba(245,158,11,0.1);color:var(--chesf-warning);">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <div>
-                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Affordable Education</h6>
-                        <p class="small mb-0" style="color:var(--chesf-text-light);">Quality education at competitive fees with flexible payment options and referral fee waivers available.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 fade-up fade-up-delay-4">
-                <div class="why-card">
-                    <div class="why-icon" style="background:rgba(99,102,241,0.1);color:#6366F1;">
-                        <i class="fas fa-map-pin"></i>
-                    </div>
-                    <div>
-                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Prime Location</h6>
-                        <p class="small mb-0" style="color:var(--chesf-text-light);">Located in Tudun Wada, Funtua — easily accessible and situated in a serene environment conducive for learning.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 fade-up fade-up-delay-4">
-                <div class="why-card">
-                    <div class="why-icon" style="background:rgba(244,63,94,0.1);color:#F43F5E;">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div>
-                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Career Opportunities</h6>
-                        <p class="small mb-0" style="color:var(--chesf-text-light);">Strong industry partnerships and internship placements to launch your career in health and environmental sectors.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== ADMISSION PROCESS ===== -->
-<section class="py-5" style="background:var(--chesf-bg);">
-    <div class="container">
-        <div class="section-title fade-up">
-            <span class="badge">How to Apply</span>
-            <h2>Admission Process</h2>
-            <p>Getting started is easy. Follow these simple steps to begin your journey at CHESF.</p>
-        </div>
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-4 fade-up">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h5 class="fw-bold" style="color:var(--chesf-text-dark);">Create Account</h5>
-                    <p class="small" style="color:var(--chesf-text-light);">Register a secure account with your details. Your information is encrypted and progress is saved.</p>
-                </div>
-            </div>
-            <div class="col-md-4 fade-up fade-up-delay-1">
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h5 class="fw-bold" style="color:var(--chesf-text-dark);">Pay Application Fee</h5>
-                    <p class="small" style="color:var(--chesf-text-light);">Pay ₦12,550 securely via Paystack or apply a valid referral code for a fee waiver.</p>
-                </div>
-            </div>
-            <div class="col-md-4 fade-up fade-up-delay-2">
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h5 class="fw-bold" style="color:var(--chesf-text-dark);">Complete Application</h5>
-                    <p class="small" style="color:var(--chesf-text-light);">Fill out your details across 5 simple sections. Track progress with our step indicator.</p>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-5 fade-up">
-            <a href="{% url 'signup' %}" class="btn btn-chesf-primary btn-chesf-lg btn-chesf-rounded px-5">
-                <i class="fas fa-rocket me-2"></i> Start Your Application
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ===== ABOUT / CONTACT SECTION ===== -->
-<section class="py-5" style="background:white;">
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 fade-up">
-                <span class="badge" style="display:inline-block;background:rgba(15,118,110,0.1);color:var(--chesf-primary);font-weight:600;font-size:0.8rem;padding:0.4rem 1rem;border-radius:50px;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.75rem;">About CHESF</span>
-                <h2 class="fw-bold mb-3" style="color:var(--chesf-text-dark);font-size:1.8rem;">College of Health & Environmental Sciences Funtua</h2>
+                <span class="section-badge">About CHESF</span>
+                <h2 class="fw-bold mb-3" style="color:var(--chesf-text-dark);font-size:1.9rem;">College of Health &amp; Environmental Sciences Funtua</h2>
+                <div style="width:60px;height:4px;background:var(--chesf-gradient-gold);border-radius:2px;margin-bottom:1.5rem;"></div>
                 <p style="color:var(--chesf-text-light);line-height:1.8;">
-                    The College of Health and Environmental Sciences Funtua is dedicated to providing quality education in health and environmental sciences. Our mission is to train competent professionals who can address health challenges and environmental issues in our communities.
+                    The College of Health and Environmental Sciences Funtua (CHESF) is an <strong>NBTE-approved</strong> tertiary institution dedicated to producing competent, skilled, and ethical professionals in health and environmental sciences.
                 </p>
                 <p style="color:var(--chesf-text-light);line-height:1.8;">
-                    Located in Tudun Wada Funtua, Katsina State, we offer a conducive learning environment with modern facilities and experienced faculty members committed to academic excellence.
+                    With accreditation from <strong>CHPRBN, WAHEB, EHCON,</strong> and <strong>JAMB</strong>, our programmes meet the highest national standards. Our mission — <em>"Knowledge for Health and Sustainable Environment"</em> — drives everything we do.
                 </p>
                 <p style="color:var(--chesf-text-light);line-height:1.8;">
-                    Our institution is recognized by relevant regulatory bodies and continues to expand its academic offerings to meet the growing demands in the healthcare and environmental sectors.
+                    Located in Tudun Wada, Funtua, Katsina State, we offer a serene, conducive learning environment with modern laboratories, experienced faculty, and strong clinical affiliation partnerships.
                 </p>
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-check-circle" style="color:var(--chesf-gold);"></i>
+                        <span class="fw-semibold small" style="color:var(--chesf-text-dark);">NBTE Accredited</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-check-circle" style="color:var(--chesf-gold);"></i>
+                        <span class="fw-semibold small" style="color:var(--chesf-text-dark);">JAMB Approved</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-check-circle" style="color:var(--chesf-gold);"></i>
+                        <span class="fw-semibold small" style="color:var(--chesf-text-dark);">Affordable Fees</span>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-6 fade-up fade-up-delay-2">
                 <div class="card-chesf border-0 shadow-sm">
-                    <div class="card-body p-4" style="background:var(--chesf-bg-alt);border-radius:var(--chesf-radius);">
+                    <div class="card-body p-4" style="background:linear-gradient(135deg,#F0FDFA,#FFFDF0);border-radius:var(--chesf-radius);">
                         <h5 class="fw-bold mb-4" style="color:var(--chesf-text-dark);">
-                            <i class="fas fa-location-dot me-2" style="color:var(--chesf-primary);"></i> Get in Touch
+                            <i class="fas fa-location-dot me-2" style="color:var(--chesf-gold);"></i> Get in Touch
                         </h5>
                         <div class="d-flex align-items-start gap-3 mb-3">
                             <div style="width:40px;height:40px;border-radius:10px;background:rgba(15,118,110,0.1);display:flex;align-items:center;justify-content:center;color:var(--chesf-primary);flex-shrink:0;">
@@ -352,8 +233,8 @@
                                 <p class="small mb-0" style="color:var(--chesf-text-light);">09035068809</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-start gap-3 mb-3">
-                            <div style="width:40px;height:40px;border-radius:10px;background:rgba(56,189,248,0.1);display:flex;align-items:center;justify-content:center;color:var(--chesf-accent-dark);flex-shrink:0;">
+                        <div class="d-flex align-items-start gap-3 mb-0">
+                            <div style="width:40px;height:40px;border-radius:10px;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center;color:var(--chesf-gold);flex-shrink:0;">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
@@ -364,6 +245,235 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROGRAMMES SECTION ===== -->
+<section class="py-5" style="background:white;">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">Our Programmes</span>
+            <h2>Academic Programmes</h2>
+            <p>Choose from 8 accredited programmes designed to produce competent healthcare and environmental professionals.</p>
+        </div>
+        <div class="row g-4">
+            {% if programmes %}
+                {% for programme in programmes %}
+                <div class="col-md-6 col-lg-3 fade-up {% if forloop.counter0 > 3 %}fade-up-delay-{{ forloop.counter0|add:"-4" }}{% else %}fade-up-delay-{{ forloop.counter0 }}{% endif %}">
+                    <div class="program-card">
+                        <div class="program-icon" style="background:rgba(15,118,110,0.1);color:var(--chesf-primary);">
+                            <i class="fas {{ programme.icon|default:'fa-graduation-cap' }}"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">{{ programme.name }}</h5>
+                        <p class="small mb-2" style="color:var(--chesf-text-light);">{{ programme.description|truncatewords:18 }}</p>
+                        <div class="d-flex flex-wrap gap-1 mt-2">
+                            {% if programme.accreditation_body %}
+                            <span class="badge" style="background:rgba(212,175,55,0.1);color:var(--chesf-gold-dark);font-size:0.7rem;font-weight:500;">
+                                <i class="fas fa-check-circle me-1"></i> {{ programme.accreditation_body }}
+                            </span>
+                            {% endif %}
+                            <span class="badge" style="background:rgba(15,118,110,0.08);color:var(--chesf-primary);font-size:0.7rem;font-weight:500;">
+                                <i class="fas fa-clock me-1"></i> {{ programme.duration }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                {% with programmes_list as default_progs %}
+                <div class="col-md-6 col-lg-3 fade-up">
+                    <div class="program-card">
+                        <div class="program-icon" style="background:rgba(15,118,110,0.1);color:var(--chesf-primary);">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">ND Community Health (CHEW)</h5>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">National Diploma training community health extension workers. CHPRBN accredited.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-up fade-up-delay-1">
+                    <div class="program-card">
+                        <div class="program-icon" style="background:rgba(16,185,129,0.1);color:var(--chesf-success);">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Diploma in Environmental Health</h5>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Training environmental health officers. EHCON recognised.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-up fade-up-delay-2">
+                    <div class="program-card">
+                        <div class="program-icon" style="background:rgba(56,189,248,0.1);color:var(--chesf-accent-dark);">
+                            <i class="fas fa-notes-medical"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Diploma in Health Information</h5>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Health records and information management professionals.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-up fade-up-delay-3">
+                    <div class="program-card">
+                        <div class="program-icon" style="background:rgba(212,175,55,0.1);color:var(--chesf-gold-dark);">
+                            <i class="fas fa-prescription-bottle"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Diploma in Pharmacy Tech.</h5>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Pharmacy technicians for community and hospital practice.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
+                    <div class="program-card">
+                        <div class="program-icon" style="background:rgba(99,102,241,0.1);color:#6366F1;">
+                            <i class="fas fa-x-ray"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Diploma in X-Ray &amp; Imaging</h5>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Radiography and diagnostic imaging technology.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
+                    <div class="program-card">
+                        <div class="program-icon" style="background:rgba(244,63,94,0.1);color:#F43F5E;">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Diploma in Nutrition &amp; Dietetics</h5>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Nutrition science and dietary management.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
+                    <div class="program-card">
+                        <div class="program-icon" style="background:rgba(139,92,246,0.1);color:#8B5CF6;">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Certificate in Community Health</h5>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">JCHEW foundation programme in community health.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
+                    <div class="program-card">
+                        <div class="program-icon" style="background:rgba(15,118,110,0.1);color:var(--chesf-primary);">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style="color:var(--chesf-text-dark);font-size:0.95rem;">Retraining in Community Health</h5>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Advanced training for JCHEW certificate holders.</p>
+                    </div>
+                </div>
+                {% endwith %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY CHOOSE CHESF ===== -->
+<section class="py-5" style="background:var(--chesf-bg);">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">Why CHESF</span>
+            <h2>Why Choose CHESF?</h2>
+            <p>Discover what makes CHESF the right choice for your academic and professional journey.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 fade-up">
+                <div class="why-card">
+                    <div class="why-icon" style="background:rgba(15,118,110,0.1);color:var(--chesf-primary);">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Accredited Programmes</h6>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">All programmes accredited by NBTE, CHPRBN, WAHEB, and EHCON.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fade-up fade-up-delay-1">
+                <div class="why-card">
+                    <div class="why-icon" style="background:rgba(16,185,129,0.1);color:var(--chesf-success);">
+                        <i class="fas fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Experienced Faculty</h6>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Learn from highly qualified lecturers and industry professionals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fade-up fade-up-delay-2">
+                <div class="why-card">
+                    <div class="why-icon" style="background:rgba(212,175,55,0.1);color:var(--chesf-gold-dark);">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Modern Facilities</h6>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Well-equipped labs, libraries, and clinical affiliation centres.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fade-up fade-up-delay-3">
+                <div class="why-card">
+                    <div class="why-icon" style="background:rgba(245,158,11,0.1);color:var(--chesf-warning);">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Affordable Education</h6>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Quality education at competitive fees with referral fee waivers available.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fade-up fade-up-delay-4">
+                <div class="why-card">
+                    <div class="why-icon" style="background:rgba(99,102,241,0.1);color:#6366F1;">
+                        <i class="fas fa-map-pin"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Prime Location</h6>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Serene environment in Tudun Wada, Funtua — accessible and conducive.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fade-up fade-up-delay-4">
+                <div class="why-card">
+                    <div class="why-icon" style="background:rgba(244,63,94,0.1);color:#F43F5E;">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color:var(--chesf-text-dark);">Career Opportunities</h6>
+                        <p class="small mb-0" style="color:var(--chesf-text-light);">Strong industry partnerships and internship placements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ADMISSION PROCESS ===== -->
+<section class="py-5" style="background:white;">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">How to Apply</span>
+            <h2>Admission Process</h2>
+            <p>Getting started is easy. Follow these simple steps to begin your journey at CHESF.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 fade-up">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h5 class="fw-bold" style="color:var(--chesf-text-dark);">Create Account</h5>
+                    <p class="small" style="color:var(--chesf-text-light);">Register a secure account. Your progress is saved automatically.</p>
+                </div>
+            </div>
+            <div class="col-md-4 fade-up fade-up-delay-1">
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h5 class="fw-bold" style="color:var(--chesf-text-dark);">Pay Application Fee</h5>
+                    <p class="small" style="color:var(--chesf-text-light);">Pay <strong>₦6,000</strong> securely via Paystack or use a referral code for a fee waiver.</p>
+                </div>
+            </div>
+            <div class="col-md-4 fade-up fade-up-delay-2">
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h5 class="fw-bold" style="color:var(--chesf-text-dark);">Complete Application</h5>
+                    <p class="small" style="color:var(--chesf-text-light);">Fill out personal info, schools, results, course choice, declaration &amp; uploads.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5 fade-up">
+            <a href="{% url 'signup' %}" class="btn btn-chesf-primary btn-chesf-lg btn-chesf-rounded px-5 shadow-lg">
+                <i class="fas fa-rocket me-2"></i> Start Your Application
+            </a>
         </div>
     </div>
 </section>

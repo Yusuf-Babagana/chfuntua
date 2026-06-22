@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
-from .models import Student, Application, Payment, ReferralCode, SchoolAttended, SSCEResult, UploadedDocument
+from .models import Student, Application, Payment, ReferralCode, SchoolAttended, SSCEResult, UploadedDocument, Programme
 from .forms import (
     SignupForm, LoginForm, ReferralCodeForm, SectionAForm,
     SchoolAttendedFormSet, SSCEResultFormSet, SectionDForm,
@@ -19,7 +19,8 @@ from django.utils import timezone
 def home(request):
     if request.user.is_authenticated:
         return redirect('dashboard')
-    return render(request, 'portal/home.html')
+    programmes = Programme.objects.filter(is_active=True).order_by('order')
+    return render(request, 'portal/home.html', {'programmes': programmes})
 
 
 def signup_view(request):
@@ -206,10 +207,15 @@ def dashboard(request):
         application.section_e_completed,
     ])
 
+    total_apps = Application.objects.exclude(status='draft').count()
+    programmes = Programme.objects.filter(is_active=True).order_by('order')
+
     context = {
         'application': application,
         'student': student,
         'completed_count': completed_count,
+        'total_applications': total_apps,
+        'programmes': programmes,
     }
 
     return render(request, 'portal/dashboard.html', context)

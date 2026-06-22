@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Student, Application, Payment, ReferralCode, SchoolAttended, SSCEResult, UploadedDocument
+from .models import Student, Application, Payment, ReferralCode, SchoolAttended, SSCEResult, UploadedDocument, Programme
 
 
 @admin.register(Student)
@@ -9,6 +9,30 @@ class StudentAdmin(admin.ModelAdmin):
     list_filter = ['has_paid', 'used_referral', 'created_at']
     search_fields = ['user__username', 'user__email', 'user__first_name', 'user__last_name', 'phone']
     readonly_fields = ['created_at', 'updated_at']
+
+
+@admin.register(Programme)
+class ProgrammeAdmin(admin.ModelAdmin):
+    list_display = ['name', 'code', 'category', 'duration', 'accreditation_body', 'order', 'is_active']
+    list_filter = ['category', 'is_active', 'accreditation_body']
+    search_fields = ['name', 'code', 'description']
+    list_editable = ['order', 'is_active']
+    prepopulated_fields = {'code': ('name',)}
+
+    fieldsets = (
+        (None, {
+            'fields': ('name', 'code', 'category', 'is_active')
+        }),
+        ('Details', {
+            'fields': ('duration', 'description', 'admission_requirements', 'tuition_fee')
+        }),
+        ('Accreditation', {
+            'fields': ('accreditation_body',)
+        }),
+        ('Display', {
+            'fields': ('icon', 'order')
+        }),
+    )
 
 
 @admin.register(Payment)
@@ -56,9 +80,9 @@ class UploadedDocumentInline(admin.TabularInline):
 class ApplicationAdmin(admin.ModelAdmin):
     list_display = [
         'application_number', 'student_name', 'email', 'first_choice',
-        'status', 'progress', 'submitted_at'
+        'application_type', 'status', 'progress', 'submitted_at'
     ]
-    list_filter = ['status', 'first_choice', 'submitted_at', 'created_at']
+    list_filter = ['status', 'application_type', 'first_choice', 'submitted_at', 'created_at']
     search_fields = [
         'application_number', 'student__user__username', 'student__user__email',
         'first_name', 'surname', 'email'
@@ -68,7 +92,7 @@ class ApplicationAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('Application Info', {
-            'fields': ('application_number', 'student', 'status', 'submitted_at')
+            'fields': ('application_number', 'student', 'application_type', 'status', 'submitted_at')
         }),
         ('Personal Information', {
             'fields': (

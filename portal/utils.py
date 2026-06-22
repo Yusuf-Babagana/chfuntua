@@ -37,7 +37,7 @@ def generate_application_pdf(application):
         fontName='Helvetica-Bold'
     )
 
-    title = Paragraph("COLLEGE OF HEALTH SCIENCES AND TECHNOLOGY HADEJIA", title_style)
+    title = Paragraph("COLLEGE OF HEALTH AND ENVIRONMENTAL SCIENCES FUNTUA", title_style)
     story.append(title)
 
     subtitle = Paragraph("ADMISSION APPLICATION FORM", title_style)
