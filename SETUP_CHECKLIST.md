@@ -1,4 +1,4 @@
-# CHSTH Admission Portal - Setup Checklist
+# CHESF Admission Portal - Setup Checklist
 
 ## Pre-Deployment Checklist
 

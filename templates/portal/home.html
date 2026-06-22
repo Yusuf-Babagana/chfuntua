@@ -5,33 +5,32 @@
 
 {% block content %}
 
-<!-- ===== HERO SECTION ===== -->
 <section class="hero-chesf">
     <div class="container">
-        <div class="row align-items-center g-5">
+        <div class="row align-items-center g-4">
             <div class="col-lg-7 fade-up">
-                <span style="display:inline-block;background:var(--chesf-green-bg);border:1px solid rgba(15,92,75,0.15);border-radius:6px;padding:0.35rem 1rem;font-size:0.75rem;font-weight:600;color:var(--chesf-green);margin-bottom:1rem;">
+                <span style="display:inline-block;background:var(--chesf-primary-bg);border:1px solid rgba(15,92,75,0.12);border-radius:6px;padding:0.3rem 0.9rem;font-size:0.73rem;font-weight:600;color:var(--chesf-primary);margin-bottom:0.9rem;">
                     <i class="fas fa-bullhorn me-1"></i> 2026/2027 Admissions Now Open
                 </span>
-                <h1 style="font-size:2.5rem;font-weight:900;color:var(--chesf-text-dark);letter-spacing:-1px;line-height:1.15;margin-bottom:1rem;">
-                    Shape Your Future at <span style="color:var(--chesf-green);">CHESF</span>
+                <h1 style="font-size:2.5rem;font-weight:900;color:var(--chesf-text-dark);letter-spacing:-0.8px;line-height:1.15;margin-bottom:0.9rem;">
+                    Shape Your Future at <span style="color:var(--chesf-primary);">CHESF</span>
                 </h1>
-                <p style="font-size:1rem;color:var(--chesf-text);line-height:1.7;max-width:540px;margin-bottom:1.5rem;">
+                <p style="font-size:1rem;color:var(--chesf-text);line-height:1.7;max-width:540px;margin-bottom:1.4rem;">
                     Join the College of Health and Environmental Sciences Funtua — an <strong>NBTE-approved</strong> institution committed to <strong>"Knowledge for Health and Sustainable Environment."</strong>
                 </p>
-                <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.75rem;">
-                    <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:6px;padding:0.3rem 0.75rem;font-size:0.78rem;font-weight:600;color:#92400E;">
-                        <i class="fas fa-check-circle" style="color:var(--chesf-gold);"></i> CHPRBN Accredited
+                <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:1.5rem;">
+                    <span style="background:var(--chesf-primary-bg);border:1px solid rgba(15,92,75,0.12);border-radius:6px;padding:0.25rem 0.7rem;font-size:0.75rem;font-weight:600;color:var(--chesf-primary);">
+                        <i class="fas fa-check-circle"></i> CHPRBN Accredited
                     </span>
-                    <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:6px;padding:0.3rem 0.75rem;font-size:0.78rem;font-weight:600;color:#92400E;">
-                        <i class="fas fa-check-circle" style="color:var(--chesf-gold);"></i> WAHEB Approved
+                    <span style="background:var(--chesf-primary-bg);border:1px solid rgba(15,92,75,0.12);border-radius:6px;padding:0.25rem 0.7rem;font-size:0.75rem;font-weight:600;color:var(--chesf-primary);">
+                        <i class="fas fa-check-circle"></i> WAHEB Approved
                     </span>
-                    <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:6px;padding:0.3rem 0.75rem;font-size:0.78rem;font-weight:600;color:#92400E;">
-                        <i class="fas fa-check-circle" style="color:var(--chesf-gold);"></i> EHCON Recognised
+                    <span style="background:var(--chesf-primary-bg);border:1px solid rgba(15,92,75,0.12);border-radius:6px;padding:0.25rem 0.7rem;font-size:0.75rem;font-weight:600;color:var(--chesf-primary);">
+                        <i class="fas fa-check-circle"></i> EHCON Recognised
                     </span>
                 </div>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="{% url 'signup' %}" class="btn btn-chesf btn-chesf-gold btn-chesf-lg px-5">
+                    <a href="{% url 'signup' %}" class="btn btn-chesf btn-chesf-primary btn-chesf-lg px-5">
                         <i class="fas fa-rocket me-2"></i> Apply Now
                     </a>
                     <a href="{% url 'login' %}" class="btn btn-chesf btn-chesf-outline btn-chesf-lg px-5">
@@ -40,43 +39,43 @@
                 </div>
             </div>
             <div class="col-lg-5 fade-up fade-up-delay-2">
-                <div style="background:var(--chesf-white);border:1px solid var(--chesf-border);border-radius:var(--chesf-radius);padding:2rem;box-shadow:var(--chesf-shadow);">
-                    <div class="d-flex align-items-center gap-3 mb-4 pb-3" style="border-bottom:1px solid var(--chesf-border);">
-                        <div style="width:48px;height:48px;border-radius:10px;background:var(--chesf-green);display:flex;align-items:center;justify-content:center;color:var(--chesf-gold);font-size:1.1rem;flex-shrink:0;">
+                <div style="background:var(--chesf-white);border:1px solid var(--chesf-border);border-radius:var(--chesf-radius);padding:1.75rem;box-shadow:var(--chesf-shadow);">
+                    <div class="d-flex align-items-center gap-3 mb-3 pb-3" style="border-bottom:1px solid var(--chesf-border);">
+                        <div style="width:46px;height:46px;border-radius:10px;background:var(--chesf-primary);display:flex;align-items:center;justify-content:center;color:white;font-size:1.05rem;flex-shrink:0;">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div>
-                            <h5 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.95rem;margin-bottom:0;">Admissions Open</h5>
+                            <h5 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.92rem;margin-bottom:0;">Admissions Open</h5>
                             <small style="color:var(--chesf-text-light);">2026/2027 Session</small>
                         </div>
                     </div>
-                    <div style="margin-bottom:0.75rem;">
+                    <div style="margin-bottom:0.7rem;">
                         {% if programmes %}
                             {% for programme in programmes|slice:":5" %}
                             <div class="d-flex align-items-center gap-2 mb-2">
-                                <i class="fas fa-check-circle" style="color:var(--chesf-success);font-size:0.85rem;"></i>
-                                <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.85rem;">{{ programme.name }}</span>
+                                <i class="fas fa-check-circle" style="color:var(--chesf-success);font-size:0.82rem;"></i>
+                                <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.82rem;">{{ programme.name }}</span>
                             </div>
                             {% endfor %}
                         {% else %}
                         <div class="d-flex align-items-center gap-2 mb-2">
-                            <i class="fas fa-check-circle" style="color:var(--chesf-success);font-size:0.85rem;"></i>
-                            <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.85rem;">ND Community Health (CHEW)</span>
+                            <i class="fas fa-check-circle" style="color:var(--chesf-success);font-size:0.82rem;"></i>
+                            <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.82rem;">ND Community Health (CHEW)</span>
                         </div>
                         <div class="d-flex align-items-center gap-2 mb-2">
-                            <i class="fas fa-check-circle" style="color:var(--chesf-success);font-size:0.85rem;"></i>
-                            <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.85rem;">Diploma in Environmental Health</span>
+                            <i class="fas fa-check-circle" style="color:var(--chesf-success);font-size:0.82rem;"></i>
+                            <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.82rem;">Diploma in Environmental Health</span>
                         </div>
                         {% endif %}
                     </div>
-                    <div style="background:var(--chesf-bg);border-radius:8px;padding:1rem;margin-top:1rem;border:1px solid var(--chesf-border);">
+                    <div style="background:var(--chesf-bg);border-radius:8px;padding:0.9rem;margin-top:0.9rem;border:1px solid var(--chesf-border);">
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
-                                <small style="color:var(--chesf-text-light);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Application Fee</small>
-                                <h4 style="font-weight:800;color:var(--chesf-text-dark);margin-bottom:0;font-size:1.5rem;">₦6,000</h4>
+                                <small style="color:var(--chesf-text-light);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.4px;font-weight:600;">Application Fee</small>
+                                <h4 style="font-weight:800;color:var(--chesf-text-dark);margin-bottom:0;font-size:1.4rem;">₦6,000</h4>
                             </div>
-                            <span style="background:var(--chesf-white);border:1px solid var(--chesf-border);border-radius:6px;padding:0.35rem 0.75rem;font-size:0.75rem;font-weight:600;color:var(--chesf-text-light);">
-                                <i class="fas fa-shield-alt me-1" style="color:var(--chesf-green);"></i> Secure
+                            <span style="background:var(--chesf-white);border:1px solid var(--chesf-border);border-radius:6px;padding:0.3rem 0.7rem;font-size:0.73rem;font-weight:600;color:var(--chesf-text-light);">
+                                <i class="fas fa-shield-alt me-1" style="color:var(--chesf-primary);"></i> Secure
                             </span>
                         </div>
                     </div>
@@ -86,18 +85,17 @@
     </div>
 </section>
 
-<!-- ===== ACCREDITATION BODIES ===== -->
 <section class="section-white py-3" style="border-bottom:1px solid var(--chesf-border);">
     <div class="container">
         <div class="row align-items-center g-2">
             <div class="col-lg-2 text-center text-lg-start mb-2 mb-lg-0">
-                <small style="font-weight:700;color:var(--chesf-text-light);text-transform:uppercase;letter-spacing:0.5px;font-size:0.65rem;">Accredited By</small>
+                <small style="font-weight:700;color:var(--chesf-text-light);text-transform:uppercase;letter-spacing:0.4px;font-size:0.62rem;">Accredited By</small>
             </div>
             <div class="col-lg-10">
                 <div class="row g-2">
                     <div class="col-6 col-md-3">
                         <div class="accredit-badge">
-                            <div class="accredit-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-certificate"></i></div>
+                            <div class="accredit-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-certificate"></i></div>
                             <div>
                                 <div class="accredit-name">NBTE</div>
                                 <div class="accredit-label">National Board for Technical Education</div>
@@ -106,7 +104,7 @@
                     </div>
                     <div class="col-6 col-md-3">
                         <div class="accredit-badge">
-                            <div class="accredit-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-heartbeat"></i></div>
+                            <div class="accredit-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-heartbeat"></i></div>
                             <div>
                                 <div class="accredit-name">CHPRBN</div>
                                 <div class="accredit-label">Community Health Registration Board</div>
@@ -115,7 +113,7 @@
                     </div>
                     <div class="col-6 col-md-3">
                         <div class="accredit-badge">
-                            <div class="accredit-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-globe-africa"></i></div>
+                            <div class="accredit-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-globe-africa"></i></div>
                             <div>
                                 <div class="accredit-name">WAHEB</div>
                                 <div class="accredit-label">W. African Health Examination Board</div>
@@ -124,7 +122,7 @@
                     </div>
                     <div class="col-6 col-md-3">
                         <div class="accredit-badge">
-                            <div class="accredit-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-leaf"></i></div>
+                            <div class="accredit-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-leaf"></i></div>
                             <div>
                                 <div class="accredit-name">EHCON</div>
                                 <div class="accredit-label">Environmental Health Council</div>
@@ -137,7 +135,6 @@
     </div>
 </section>
 
-<!-- ===== STATISTICS ===== -->
 <section class="section-gray py-4" style="border-bottom:1px solid var(--chesf-border);">
     <div class="container">
         <div class="row g-3">
@@ -152,7 +149,7 @@
             </div>
             <div class="col-6 col-lg-3 fade-up fade-up-delay-1">
                 <div class="stat-card">
-                    <div class="stat-icon-bg" style="background:#EFF6FF;color:var(--chesf-info);">
+                    <div class="stat-icon-bg" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);">
                         <i class="fas fa-book-open"></i>
                     </div>
                     <div class="stat-value">8</div>
@@ -161,7 +158,7 @@
             </div>
             <div class="col-6 col-lg-3 fade-up fade-up-delay-2">
                 <div class="stat-card">
-                    <div class="stat-icon-bg" style="background:#FFFBEB;color:var(--chesf-gold-dark);">
+                    <div class="stat-icon-bg" style="background:var(--chesf-primary-bg);color:var(--chesf-primary-lighter);">
                         <i class="fas fa-award"></i>
                     </div>
                     <div class="stat-value">4</div>
@@ -181,71 +178,70 @@
     </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
 <section class="section-white py-5">
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 fade-up">
-                <span class="section-badge" style="display:inline-block;background:var(--chesf-green-bg);border:1px solid rgba(15,92,75,0.15);border-radius:6px;padding:0.3rem 1rem;font-size:0.7rem;font-weight:600;color:var(--chesf-green);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.75rem;">
+                <span class="section-badge" style="display:inline-block;background:var(--chesf-primary-bg);border:1px solid rgba(15,92,75,0.12);border-radius:6px;padding:0.25rem 0.9rem;font-size:0.68rem;font-weight:600;color:var(--chesf-primary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.7rem;">
                     About CHESF
                 </span>
-                <h2 style="font-weight:800;color:var(--chesf-text-dark);font-size:1.75rem;margin-bottom:0.75rem;letter-spacing:-0.5px;">College of Health &amp; Environmental Sciences Funtua</h2>
-                <div class="gold-divider mb-4"></div>
-                <p style="color:var(--chesf-text);line-height:1.8;margin-bottom:0.75rem;">
+                <h2 style="font-weight:800;color:var(--chesf-text-dark);font-size:1.7rem;margin-bottom:0.7rem;letter-spacing:-0.3px;">College of Health &amp; Environmental Sciences Funtua</h2>
+                <div class="green-divider mb-4"></div>
+                <p style="color:var(--chesf-text);line-height:1.8;margin-bottom:0.7rem;">
                     The College of Health and Environmental Sciences Funtua (CHESF) is an <strong>NBTE-approved</strong> tertiary institution dedicated to producing competent, skilled, and ethical professionals in health and environmental sciences.
                 </p>
-                <p style="color:var(--chesf-text);line-height:1.8;margin-bottom:0.75rem;">
+                <p style="color:var(--chesf-text);line-height:1.8;margin-bottom:0.7rem;">
                     With accreditation from <strong>CHPRBN, WAHEB, EHCON,</strong> and <strong>JAMB</strong>, our programmes meet the highest national standards.
                 </p>
-                <p style="color:var(--chesf-text);line-height:1.8;margin-bottom:1.5rem;">
+                <p style="color:var(--chesf-text);line-height:1.8;margin-bottom:1.4rem;">
                     Located in Tudun Wada, Funtua, Katsina State, we offer a serene, conducive learning environment with modern laboratories, experienced faculty, and strong clinical affiliation partnerships.
                 </p>
                 <div class="d-flex flex-wrap gap-4">
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-check-circle" style="color:var(--chesf-green);font-size:0.9rem;"></i>
-                        <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.85rem;">NBTE Accredited</span>
+                        <i class="fas fa-check-circle" style="color:var(--chesf-primary);font-size:0.88rem;"></i>
+                        <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.82rem;">NBTE Accredited</span>
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-check-circle" style="color:var(--chesf-green);font-size:0.9rem;"></i>
-                        <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.85rem;">JAMB Approved</span>
+                        <i class="fas fa-check-circle" style="color:var(--chesf-primary);font-size:0.88rem;"></i>
+                        <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.82rem;">JAMB Approved</span>
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-check-circle" style="color:var(--chesf-green);font-size:0.9rem;"></i>
-                        <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.85rem;">Affordable Fees</span>
+                        <i class="fas fa-check-circle" style="color:var(--chesf-primary);font-size:0.88rem;"></i>
+                        <span style="font-weight:600;color:var(--chesf-text-dark);font-size:0.82rem;">Affordable Fees</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 fade-up fade-up-delay-2">
                 <div class="card-chesf">
-                    <div class="card-body" style="background:var(--chesf-green-bg);border-radius:var(--chesf-radius);">
-                        <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:1.25rem;">
-                            <i class="fas fa-location-dot me-2" style="color:var(--chesf-gold);"></i> Get in Touch
+                    <div class="card-body" style="background:var(--chesf-primary-bg);border-radius:var(--chesf-radius);">
+                        <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:1.15rem;">
+                            <i class="fas fa-location-dot me-2" style="color:var(--chesf-primary);"></i> Get in Touch
                         </h5>
                         <div class="d-flex align-items-start gap-3 mb-3">
-                            <div style="width:38px;height:38px;border-radius:8px;background:var(--chesf-white);border:1px solid var(--chesf-border);display:flex;align-items:center;justify-content:center;color:var(--chesf-green);flex-shrink:0;">
+                            <div style="width:36px;height:36px;border-radius:8px;background:var(--chesf-white);border:1px solid var(--chesf-border);display:flex;align-items:center;justify-content:center;color:var(--chesf-primary);flex-shrink:0;">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.82rem;margin-bottom:0.15rem;">Address</h6>
-                                <p style="font-size:0.82rem;color:var(--chesf-text);margin-bottom:0;">P.M.B 6043 Kabomo Road, After Railway Crossing, Tudun Wada, Funtua, Katsina State</p>
+                                <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.8rem;margin-bottom:0.1rem;">Address</h6>
+                                <p style="font-size:0.8rem;color:var(--chesf-text);margin-bottom:0;">P.M.B 6043 Kabomo Road, After Railway Crossing, Tudun Wada, Funtua, Katsina State</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-start gap-3 mb-3">
-                            <div style="width:38px;height:38px;border-radius:8px;background:var(--chesf-white);border:1px solid var(--chesf-border);display:flex;align-items:center;justify-content:center;color:var(--chesf-green);flex-shrink:0;">
+                            <div style="width:36px;height:36px;border-radius:8px;background:var(--chesf-white);border:1px solid var(--chesf-border);display:flex;align-items:center;justify-content:center;color:var(--chesf-primary);flex-shrink:0;">
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
-                                <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.82rem;margin-bottom:0.15rem;">Phone</h6>
-                                <p style="font-size:0.82rem;color:var(--chesf-text);margin-bottom:0;">09035068809</p>
+                                <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.8rem;margin-bottom:0.1rem;">Phone</h6>
+                                <p style="font-size:0.8rem;color:var(--chesf-text);margin-bottom:0;">09035068809</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-start gap-3">
-                            <div style="width:38px;height:38px;border-radius:8px;background:var(--chesf-white);border:1px solid var(--chesf-border);display:flex;align-items:center;justify-content:center;color:var(--chesf-green);flex-shrink:0;">
+                            <div style="width:36px;height:36px;border-radius:8px;background:var(--chesf-white);border:1px solid var(--chesf-border);display:flex;align-items:center;justify-content:center;color:var(--chesf-primary);flex-shrink:0;">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.82rem;margin-bottom:0.15rem;">Email</h6>
-                                <p style="font-size:0.82rem;margin-bottom:0;"><a href="mailto:shesf@yahoo.com" style="color:var(--chesf-green);font-weight:600;">shesf@yahoo.com</a></p>
+                                <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.8rem;margin-bottom:0.1rem;">Email</h6>
+                                <p style="font-size:0.8rem;margin-bottom:0;"><a href="mailto:shesf@yahoo.com" style="color:var(--chesf-primary);font-weight:600;">shesf@yahoo.com</a></p>
                             </div>
                         </div>
                     </div>
@@ -255,7 +251,6 @@
     </div>
 </section>
 
-<!-- ===== PROGRAMMES ===== -->
 <section class="section-gray py-5">
     <div class="container">
         <div class="section-title fade-up">
@@ -268,18 +263,18 @@
                 {% for programme in programmes %}
                 <div class="col-md-6 col-lg-3 fade-up {% if forloop.counter0 > 3 %}fade-up-delay-{{ forloop.counter0|add:"-4" }}{% else %}fade-up-delay-{{ forloop.counter0 }}{% endif %}">
                     <div class="program-card">
-                        <div class="program-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);">
+                        <div class="program-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);">
                             <i class="fas {{ programme.icon|default:'fa-graduation-cap' }}"></i>
                         </div>
                         <h5>{{ programme.name }}</h5>
                         <p>{{ programme.description|truncatewords:16 }}</p>
                         <div class="d-flex flex-wrap gap-1">
                             {% if programme.accreditation_body %}
-                            <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:4px;padding:0.15rem 0.5rem;font-size:0.65rem;font-weight:600;color:#92400E;display:inline-flex;align-items:center;gap:3px;">
+                            <span style="background:var(--chesf-primary-bg);border:1px solid rgba(15,92,75,0.12);border-radius:4px;padding:0.15rem 0.45rem;font-size:0.62rem;font-weight:600;color:var(--chesf-primary);display:inline-flex;align-items:center;gap:3px;">
                                 <i class="fas fa-check-circle" style="font-size:0.6rem;"></i> {{ programme.accreditation_body }}
                             </span>
                             {% endif %}
-                            <span style="background:var(--chesf-bg-alt);border:1px solid var(--chesf-border);border-radius:4px;padding:0.15rem 0.5rem;font-size:0.65rem;font-weight:600;color:var(--chesf-text);display:inline-flex;align-items:center;gap:3px;">
+                            <span style="background:var(--chesf-bg-alt);border:1px solid var(--chesf-border);border-radius:4px;padding:0.15rem 0.45rem;font-size:0.62rem;font-weight:600;color:var(--chesf-text);display:inline-flex;align-items:center;gap:3px;">
                                 <i class="fas fa-clock" style="font-size:0.6rem;"></i> {{ programme.duration }}
                             </span>
                         </div>
@@ -289,56 +284,56 @@
             {% else %}
                 <div class="col-md-6 col-lg-3 fade-up">
                     <div class="program-card">
-                        <div class="program-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-heartbeat"></i></div>
+                        <div class="program-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-heartbeat"></i></div>
                         <h5>ND Community Health (ND-CHEW)</h5>
                         <p>National Diploma training community health extension workers. CHPRBN accredited.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-up fade-up-delay-1">
                     <div class="program-card">
-                        <div class="program-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-user-md"></i></div>
+                        <div class="program-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-user-md"></i></div>
                         <h5>Diploma in CHEW (CHEW)</h5>
                         <p>Community Health Extension Worker diploma programme. CHPRBN accredited.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-up fade-up-delay-2">
                     <div class="program-card">
-                        <div class="program-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-certificate"></i></div>
+                        <div class="program-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-certificate"></i></div>
                         <h5>Junior CHEW (JCHEW)</h5>
                         <p>Foundation certificate in community health work. CHPRBN accredited.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-up fade-up-delay-3">
                     <div class="program-card">
-                        <div class="program-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-leaf"></i></div>
+                        <div class="program-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-leaf"></i></div>
                         <h5>ND Environmental Health (ND)</h5>
                         <p>National Diploma in environmental health. EHCON recognised.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
                     <div class="program-card">
-                        <div class="program-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-tree"></i></div>
+                        <div class="program-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-tree"></i></div>
                         <h5>HND Environmental Health (HND)</h5>
                         <p>Higher National Diploma in environmental health. EHCON recognised.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
                     <div class="program-card">
-                        <div class="program-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-notes-medical"></i></div>
+                        <div class="program-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-notes-medical"></i></div>
                         <h5>Diploma in HIM (HIM)</h5>
                         <p>Health Information Management diploma. WAHEB accredited.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
                     <div class="program-card">
-                        <div class="program-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <div class="program-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-chalkboard-teacher"></i></div>
                         <h5>Diploma in HPE (HPE)</h5>
                         <p>Health Promotion and Education diploma programme.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-up fade-up-delay-4">
                     <div class="program-card">
-                        <div class="program-icon" style="background:var(--chesf-green-bg);color:var(--chesf-green);"><i class="fas fa-shield-virus"></i></div>
+                        <div class="program-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);"><i class="fas fa-shield-virus"></i></div>
                         <h5>Diploma in Public Health (DPH)</h5>
                         <p>Public Health diploma for community health practice.</p>
                     </div>
@@ -348,7 +343,6 @@
     </div>
 </section>
 
-<!-- ===== WHY CHOOSE ===== -->
 <section class="section-white py-5">
     <div class="container">
         <div class="section-title fade-up">
@@ -370,7 +364,7 @@
             </div>
             <div class="col-md-6 col-lg-4 fade-up fade-up-delay-1">
                 <div class="why-card">
-                    <div class="why-icon" style="background:#EFF6FF;color:var(--chesf-info);">
+                    <div class="why-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);">
                         <i class="fas fa-chalkboard-user"></i>
                     </div>
                     <div>
@@ -381,7 +375,7 @@
             </div>
             <div class="col-md-6 col-lg-4 fade-up fade-up-delay-2">
                 <div class="why-card">
-                    <div class="why-icon" style="background:#FFFBEB;color:var(--chesf-gold-dark);">
+                    <div class="why-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary-lighter);">
                         <i class="fas fa-flask"></i>
                     </div>
                     <div>
@@ -392,7 +386,7 @@
             </div>
             <div class="col-md-6 col-lg-4 fade-up fade-up-delay-3">
                 <div class="why-card">
-                    <div class="why-icon" style="background:#FAF5FF;color:#6D28D9;">
+                    <div class="why-icon" style="background:var(--chesf-bg-alt);color:var(--chesf-primary-light);">
                         <i class="fas fa-hand-holding-heart"></i>
                     </div>
                     <div>
@@ -414,7 +408,7 @@
             </div>
             <div class="col-md-6 col-lg-4 fade-up fade-up-delay-5">
                 <div class="why-card">
-                    <div class="why-icon" style="background:#E8F5F1;color:var(--chesf-green);">
+                    <div class="why-icon" style="background:var(--chesf-primary-bg);color:var(--chesf-primary);">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div>
@@ -427,7 +421,6 @@
     </div>
 </section>
 
-<!-- ===== ADMISSION PROCESS ===== -->
 <section class="section-gray py-5">
     <div class="container">
         <div class="section-title fade-up">
@@ -459,7 +452,7 @@
             </div>
         </div>
         <div class="text-center mt-4 fade-up">
-            <a href="{% url 'signup' %}" class="btn btn-chesf-gold btn-chesf-lg px-5">
+            <a href="{% url 'signup' %}" class="btn btn-chesf-primary btn-chesf-lg px-5">
                 <i class="fas fa-rocket me-2"></i> Start Your Application
             </a>
         </div>

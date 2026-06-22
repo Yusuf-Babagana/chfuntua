@@ -26,7 +26,7 @@
                 <span class="brand-icon"><i class="fas fa-graduation-cap"></i></span>
                 <span>CHESF</span>
             </a>
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -40,7 +40,7 @@
                         </li>
                         <li class="nav-item">
                             <span class="nav-link">
-                                <i class="fas fa-user-circle me-1" style="color:var(--chesf-gold);"></i> {{ user.get_full_name|default:user.username }}
+                                <i class="fas fa-user-circle me-1 text-white"></i> {{ user.get_full_name|default:user.username }}
                             </span>
                         </li>
                         <li class="nav-item">
@@ -51,7 +51,7 @@
                             <a class="nav-link" href="{% url 'login' %}">Login</a>
                         </li>
                         <li class="nav-item ms-lg-2">
-                            <a class="btn btn-chesf-primary px-4" href="{% url 'signup' %}">
+                            <a class="btn btn-chesf-secondary px-4" href="{% url 'signup' %}">
                                 <i class="fas fa-user-plus me-1"></i> Apply Now
                             </a>
                         </li>
@@ -85,7 +85,7 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <span style="width:36px;height:36px;border-radius:8px;background:var(--chesf-gold);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--chesf-green-dark);font-weight:800;">
+                        <span style="width:34px;height:34px;border-radius:8px;background:var(--chesf-white);display:flex;align-items:center;justify-content:center;font-size:0.95rem;color:var(--chesf-primary);font-weight:800;">
                             C
                         </span>
                         <h5 class="fw-bold text-white mb-0">CHESF</h5>
@@ -97,10 +97,10 @@
                         An NBTE-approved institution training competent professionals in community health, environmental health, health information management, and allied health sciences.
                     </p>
                     <div class="d-flex gap-2">
-                        <a href="#" style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:rgba(255,255,255,0.65);text-decoration:none;transition:all 0.15s;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:rgba(255,255,255,0.65);text-decoration:none;transition:all 0.15s;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:rgba(255,255,255,0.65);text-decoration:none;transition:all 0.15s;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:rgba(255,255,255,0.65);text-decoration:none;transition:all 0.15s;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook" style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.15s;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.15s;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.15s;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn" style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.15s;"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-6 col-lg-2">
@@ -125,15 +125,15 @@
                     <h6 class="footer-heading">Contact Us</h6>
                     <ul class="list-unstyled small">
                         <li class="mb-2 d-flex align-items-start gap-2">
-                            <i class="fas fa-map-marker-alt mt-1" style="color:var(--chesf-gold);font-size:0.75rem;"></i>
+                            <i class="fas fa-map-marker-alt mt-1" style="color:rgba(255,255,255,0.5);font-size:0.75rem;"></i>
                             <span>P.M.B 6043 Kabomo Road, Funtua, Katsina State</span>
                         </li>
                         <li class="mb-2 d-flex align-items-center gap-2">
-                            <i class="fas fa-phone" style="color:var(--chesf-gold);font-size:0.75rem;"></i>
+                            <i class="fas fa-phone" style="color:rgba(255,255,255,0.5);font-size:0.75rem;"></i>
                             <span>09035068809</span>
                         </li>
                         <li class="mb-2 d-flex align-items-center gap-2">
-                            <i class="fas fa-envelope" style="color:var(--chesf-gold);font-size:0.75rem;"></i>
+                            <i class="fas fa-envelope" style="color:rgba(255,255,255,0.5);font-size:0.75rem;"></i>
                             <a href="mailto:shesf@yahoo.com">shesf@yahoo.com</a>
                         </li>
                     </ul>

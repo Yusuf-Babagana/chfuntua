@@ -1,4 +1,4 @@
-# CHSTH Admission Portal - Complete Deployment Guide
+# CHESF Admission Portal - Complete Deployment Guide
 
 ## Quick Start (Local Development)
 
@@ -62,8 +62,8 @@ Admin: `http://127.0.0.1:8000/admin`
 
 ```bash
 # In PythonAnywhere Bash console
-git clone https://github.com/yourusername/chsth-admission.git
-cd chsth-admission/django_app
+git clone https://github.com/yourusername/CHESF-admission.git
+cd CHESF-admission/django_app
 ```
 
 **Option B: Using Files Tab**
@@ -82,10 +82,10 @@ In PythonAnywhere Bash console:
 cd ~/django_app
 
 # Create virtual environment (Python 3.10 recommended)
-mkvirtualenv --python=/usr/bin/python3.10 chsth_env
+mkvirtualenv --python=/usr/bin/python3.10 CHESF_env
 
 # Activate environment (happens automatically after creation)
-workon chsth_env
+workon CHESF_env
 
 # Install dependencies
 pip install -r requirements.txt
@@ -142,7 +142,7 @@ if project_home not in sys.path:
     sys.path.insert(0, project_home)
 
 # Set environment variable for Django settings
-os.environ['DJANGO_SETTINGS_MODULE'] = 'chsth_admission.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'CHESF_admission.settings'
 
 # Import Django WSGI application
 from django.core.wsgi import get_wsgi_application
@@ -156,7 +156,7 @@ application = get_wsgi_application()
 In "Web" tab:
 
 1. Find "Virtualenv" section
-2. Enter path: `/home/yourusername/.virtualenvs/chsth_env`
+2. Enter path: `/home/yourusername/.virtualenvs/CHESF_env`
 3. The path should turn blue/green if correct
 
 ### Step 11: Configure Static Files
@@ -178,13 +178,13 @@ Add two mappings:
 ```bash
 # In Bash console
 cd ~/django_app
-workon chsth_env
+workon CHESF_env
 python manage.py collectstatic --noinput
 ```
 
 ### Step 13: Update Django Settings for Production
 
-Edit `chsth_admission/settings.py`:
+Edit `CHESF_admission/settings.py`:
 
 ```python
 import os
@@ -291,7 +291,7 @@ os.environ['PAYSTACK_SECRET_KEY'] = 'sk_test_xxx'
 **Solution:**
 ```bash
 cd ~/django_app
-workon chsth_env
+workon CHESF_env
 pip install -r requirements.txt
 ```
 
@@ -302,7 +302,7 @@ Make sure virtualenv path is correct in Web tab.
 **Solution:**
 ```bash
 cd ~/django_app
-workon chsth_env
+workon CHESF_env
 python manage.py collectstatic --clear --noinput
 ```
 
@@ -323,7 +323,7 @@ Reload web app.
 **Solution:**
 ```bash
 cd ~/django_app
-workon chsth_env
+workon CHESF_env
 python manage.py makemigrations
 python manage.py migrate
 ```
@@ -396,7 +396,7 @@ python manage.py loaddata backup_20250101.json
 ```bash
 cd ~/django_app
 git pull origin main
-workon chsth_env
+workon CHESF_env
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py collectstatic --noinput
@@ -493,4 +493,4 @@ For technical support or updates:
 
 ---
 
-**Congratulations! Your CHSTH Admission Portal is now deployed and ready to use.**
+**Congratulations! Your CHESF Admission Portal is now deployed and ready to use.**

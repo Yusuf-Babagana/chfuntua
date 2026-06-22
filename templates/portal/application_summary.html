@@ -7,12 +7,12 @@
     <div class="row justify-content-center">
         <div class="col-lg-10 col-xl-9">
             <div class="text-center mb-4 fade-up">
-                <div style="width:72px;height:72px;border-radius:50%;background:#ECFDF5;display:inline-flex;align-items:center;justify-content:center;margin-bottom:0.75rem;">
-                    <i class="fas fa-check-circle" style="font-size:2.25rem;color:var(--chesf-success);"></i>
+                <div style="width:68px;height:68px;border-radius:50%;background:#ECFDF5;display:inline-flex;align-items:center;justify-content:center;margin-bottom:0.7rem;">
+                    <i class="fas fa-check-circle" style="font-size:2rem;color:var(--chesf-success);"></i>
                 </div>
                 <h2 style="font-weight:800;color:#065F46;">Application Successfully Submitted!</h2>
-                <div style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:0.5rem 1.25rem;margin-top:0.5rem;">
-                    <span style="color:var(--chesf-text-light);font-size:0.85rem;">Tracking ID:</span>
+                <div style="display:inline-flex;align-items:center;gap:0.45rem;background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:0.45rem 1.15rem;margin-top:0.45rem;">
+                    <span style="color:var(--chesf-text-light);font-size:0.82rem;">Tracking ID:</span>
                     <strong style="color:var(--chesf-text-dark);">{{ application.application_number }}</strong>
                 </div>
             </div>
@@ -20,14 +20,14 @@
             <div class="card-chesf mb-3 fade-up">
                 <div class="card-header">
                     <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:0;">
-                        <i class="fas fa-user-circle me-2" style="color:var(--chesf-green);"></i> Personal Information
+                        <i class="fas fa-user-circle me-2" style="color:var(--chesf-primary);"></i> Personal Information
                     </h5>
                 </div>
                 <div class="card-body">
                     <div class="row align-items-center mb-3">
                         {% if application.passport_photo %}
                         <div class="col-auto">
-                            <img src="{{ application.passport_photo.url }}" alt="Passport" style="width:80px;height:80px;object-fit:cover;border-radius:8px;border:2px solid var(--chesf-border);">
+                            <img src="{{ application.passport_photo.url }}" alt="Passport" style="width:78px;height:78px;object-fit:cover;border-radius:8px;border:2px solid var(--chesf-border);">
                         </div>
                         {% endif %}
                         <div class="col">
@@ -35,9 +35,9 @@
                                 {{ application.first_name }} {{ application.other_names }}
                                 <span style="text-transform:uppercase;">{{ application.surname }}</span>
                             </h4>
-                            <div class="d-flex flex-wrap gap-3 mt-1" style="font-size:0.85rem;color:var(--chesf-text);">
-                                <span><i class="fas fa-envelope me-1" style="color:var(--chesf-green);"></i> {{ application.email }}</span>
-                                <span><i class="fas fa-phone me-1" style="color:var(--chesf-green);"></i> {{ application.phone }}</span>
+                            <div class="d-flex flex-wrap gap-3 mt-1" style="font-size:0.82rem;color:var(--chesf-text);">
+                                <span><i class="fas fa-envelope me-1" style="color:var(--chesf-primary);"></i> {{ application.email }}</span>
+                                <span><i class="fas fa-phone me-1" style="color:var(--chesf-primary);"></i> {{ application.phone }}</span>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             <tbody>
                                 <tr><th style="color:var(--chesf-text-light);font-weight:500;width:170px;">Date of Birth</th><td style="font-weight:600;color:var(--chesf-text-dark);">{{ application.date_of_birth|date:"F d, Y" }}</td></tr>
                                 <tr><th style="color:var(--chesf-text-light);font-weight:500;">JAMB Number</th><td><span class="badge-chesf badge-chesf-blue">{{ application.jamb_number }}</span></td></tr>
-                                <tr><th style="color:var(--chesf-text-light);font-weight:500;">JAMB Score</th><td><span class="badge-chesf badge-chesf-green" style="font-size:0.85rem;">{{ application.jamb_score }}</span></td></tr>
+                                <tr><th style="color:var(--chesf-text-light);font-weight:500;">JAMB Score</th><td><span class="badge-chesf badge-chesf-green" style="font-size:0.82rem;">{{ application.jamb_score }}</span></td></tr>
                                 <tr><th style="color:var(--chesf-text-light);font-weight:500;">Application Type</th><td><span class="badge-chesf badge-chesf-blue">{{ application.get_application_type_display }}</span></td></tr>
                                 <tr><th style="color:var(--chesf-text-light);font-weight:500;">State of Origin</th><td style="font-weight:600;color:var(--chesf-text-dark);">{{ application.state_of_origin }}</td></tr>
                                 <tr><th style="color:var(--chesf-text-light);font-weight:500;">LGA</th><td style="font-weight:600;color:var(--chesf-text-dark);">{{ application.lga }}</td></tr>
@@ -54,8 +54,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.85rem;margin-top:1.25rem;margin-bottom:0.75rem;">
-                        <i class="fas fa-users me-2" style="color:var(--chesf-green);"></i> Guardian / Next of Kin
+                    <h6 style="font-weight:700;color:var(--chesf-text-dark);font-size:0.82rem;margin-top:1.15rem;margin-bottom:0.7rem;">
+                        <i class="fas fa-users me-2" style="color:var(--chesf-primary);"></i> Guardian / Next of Kin
                     </h6>
                     <div class="table-responsive">
                         <table class="table table-chesf">
@@ -74,7 +74,7 @@
             <div class="card-chesf mb-3 fade-up">
                 <div class="card-header">
                     <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:0;">
-                        <i class="fas fa-school me-2" style="color:var(--chesf-green);"></i> Schools Attended
+                        <i class="fas fa-school me-2" style="color:var(--chesf-primary);"></i> Schools Attended
                     </h5>
                 </div>
                 <div class="card-body p-0">
@@ -94,19 +94,19 @@
             <div class="card-chesf mb-3 fade-up">
                 <div class="card-header">
                     <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:0;">
-                        <i class="fas fa-certificate me-2" style="color:var(--chesf-green);"></i> SSCE Results
+                        <i class="fas fa-certificate me-2" style="color:var(--chesf-primary);"></i> SSCE Results
                     </h5>
                 </div>
                 <div class="card-body">
                     <div class="row g-2">
                         {% for result in results %}
                         <div class="col-md-6">
-                            <div style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:1rem;height:100%;">
-                                <h6 style="font-weight:700;color:var(--chesf-green);margin-bottom:0.25rem;">{{ result.get_exam_type_display }} ({{ result.year }})</h6>
+                            <div style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:0.9rem;height:100%;">
+                                <h6 style="font-weight:700;color:var(--chesf-primary);margin-bottom:0.2rem;">{{ result.get_exam_type_display }} ({{ result.year }})</h6>
                                 <small style="color:var(--chesf-text-light);">#{{ result.exam_number }}</small>
                                 {% if not result.awaiting_result %}
-                                <div style="margin-top:0.5rem;">
-                                    <table style="width:100%;font-size:0.8rem;">
+                                <div style="margin-top:0.45rem;">
+                                    <table style="width:100%;font-size:0.78rem;">
                                         <tbody>
                                             <tr><td style="padding:2px 0;color:var(--chesf-text);">English</td><td style="text-align:right;font-weight:600;">{{ result.english }}</td></tr>
                                             <tr><td style="padding:2px 0;color:var(--chesf-text);">Mathematics</td><td style="text-align:right;font-weight:600;">{{ result.mathematics }}</td></tr>
@@ -121,7 +121,7 @@
                                     </table>
                                 </div>
                                 {% else %}
-                                <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:6px;padding:0.4rem 0.75rem;font-size:0.75rem;color:#92400E;margin-top:0.5rem;">
+                                <div style="background:var(--chesf-primary-bg);border:1px solid rgba(15,92,75,0.12);border-radius:6px;padding:0.35rem 0.7rem;font-size:0.73rem;color:var(--chesf-primary);margin-top:0.45rem;">
                                     <i class="fas fa-history me-1"></i> Awaiting Result
                                 </div>
                                 {% endif %}
@@ -136,16 +136,16 @@
             <div class="card-chesf mb-3 fade-up">
                 <div class="card-header">
                     <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:0;">
-                        <i class="fas fa-book me-2" style="color:var(--chesf-green);"></i> Course Selection
+                        <i class="fas fa-book me-2" style="color:var(--chesf-primary);"></i> Course Selection
                     </h5>
                 </div>
                 <div class="card-body">
-                    <div class="d-flex align-items-center gap-3" style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:0.75rem 1rem;margin-bottom:0.5rem;">
-                        <span class="badge-chesf badge-chesf-purple" style="font-size:0.75rem;">1st Choice</span>
+                    <div class="d-flex align-items-center gap-3" style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:0.7rem 0.9rem;margin-bottom:0.45rem;">
+                        <span class="badge-chesf badge-chesf-purple" style="font-size:0.73rem;">1st Choice</span>
                         <span style="font-weight:600;color:var(--chesf-text-dark);">{{ application.get_first_choice_display }}</span>
                     </div>
-                    <div class="d-flex align-items-center gap-3" style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:0.75rem 1rem;">
-                        <span class="badge-chesf badge-chesf-blue" style="font-size:0.75rem;">2nd Choice</span>
+                    <div class="d-flex align-items-center gap-3" style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:0.7rem 0.9rem;">
+                        <span class="badge-chesf badge-chesf-blue" style="font-size:0.73rem;">2nd Choice</span>
                         <span style="font-weight:600;color:var(--chesf-text-dark);">{{ application.get_second_choice_display }}</span>
                     </div>
                 </div>
@@ -155,17 +155,17 @@
             <div class="card-chesf mb-3 fade-up">
                 <div class="card-header">
                     <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:0;">
-                        <i class="fas fa-file-upload me-2" style="color:var(--chesf-green);"></i> Uploaded Documents
+                        <i class="fas fa-file-upload me-2" style="color:var(--chesf-primary);"></i> Uploaded Documents
                     </h5>
                 </div>
                 <div class="card-body">
                     <div class="row g-2">
                         {% for doc in documents %}
                         <div class="col-md-6">
-                            <div class="d-flex align-items-center justify-content-between" style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:0.75rem 1rem;">
+                            <div class="d-flex align-items-center justify-content-between" style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:0.7rem 0.9rem;">
                                 <div class="text-truncate me-2">
                                     <i class="fas fa-file-pdf me-2" style="color:var(--chesf-danger);"></i>
-                                    <span style="font-weight:500;color:var(--chesf-text-dark);font-size:0.85rem;">{{ doc.get_document_type_display }}</span>
+                                    <span style="font-weight:500;color:var(--chesf-text-dark);font-size:0.82rem;">{{ doc.get_document_type_display }}</span>
                                 </div>
                                 <a href="{{ doc.document_file.url }}" target="_blank" class="btn-chesf btn-chesf-light btn-chesf-sm" style="flex-shrink:0;">
                                     <i class="fas fa-external-link-alt"></i>

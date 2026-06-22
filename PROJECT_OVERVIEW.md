@@ -1,8 +1,8 @@
-# CHSTH Admission Portal - Project Overview
+# CHESF Admission Portal - Project Overview
 
 ## Project Summary
 
-A complete, production-ready Django web application for managing student admissions at the College of Health Sciences and Technology Hadejia (CHSTH).
+A complete, production-ready Django web application for managing student admissions at the College of Health Sciences and Technology Funtua (CHESF).
 
 ## Key Features
 
@@ -43,7 +43,7 @@ A complete, production-ready Django web application for managing student admissi
 ### Administrative Features
 
 1. **Django Admin Panel**
-   - Customized branding for CHSTH
+   - Customized branding for CHESF
    - Dashboard with statistics
    - Complete application management
 
@@ -93,7 +93,7 @@ A complete, production-ready Django web application for managing student admissi
 
 ```
 django_app/
-├── chsth_admission/          # Main project configuration
+├── CHESF_admission/          # Main project configuration
 │   ├── __init__.py
 │   ├── settings.py           # Project settings
 │   ├── urls.py               # Root URL configuration
@@ -390,7 +390,7 @@ django_app/
 
 ## License
 
-Copyright © 2025 College of Health Sciences and Technology Hadejia
+Copyright © 2025 College of Health Sciences and Technology Funtua
 All rights reserved.
 
 ## Credits

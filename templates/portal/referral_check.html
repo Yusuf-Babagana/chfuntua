@@ -10,19 +10,19 @@
             <div class="fade-up">
                 <div class="card-chesf text-center">
                     <div class="card-body p-5">
-                        <div style="width:64px;height:64px;border-radius:12px;background:var(--chesf-green);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;">
-                            <i class="fas fa-ticket-alt fs-4" style="color:var(--chesf-gold);"></i>
+                        <div style="width:60px;height:60px;border-radius:12px;background:var(--chesf-primary);display:inline-flex;align-items:center;justify-content:center;margin-bottom:0.9rem;">
+                            <i class="fas fa-ticket-alt fs-4 text-white"></i>
                         </div>
-                        <h3 style="font-weight:800;color:var(--chesf-text-dark);margin-bottom:0.25rem;">Referral Code or Payment</h3>
-                        <p style="color:var(--chesf-text);margin-bottom:1.5rem;">Waive the application fee with a referral code or proceed to pay.</p>
+                        <h3 style="font-weight:800;color:var(--chesf-text-dark);margin-bottom:0.2rem;">Referral Code or Payment</h3>
+                        <p style="color:var(--chesf-text);margin-bottom:1.4rem;">Waive the application fee with a referral code or proceed to pay.</p>
                         <form method="post" class="form-chesf text-start">
                             {% csrf_token %}
-                            <div style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:1.25rem;margin-bottom:1.25rem;">
-                                <label style="font-weight:700;color:var(--chesf-text-dark);font-size:0.85rem;margin-bottom:0.5rem;display:block;">
-                                    <i class="fas fa-hashtag me-2" style="color:var(--chesf-green);"></i> Referral Code
+                            <div style="background:var(--chesf-bg);border:1px solid var(--chesf-border);border-radius:8px;padding:1.15rem;margin-bottom:1.15rem;">
+                                <label style="font-weight:700;color:var(--chesf-text-dark);font-size:0.82rem;margin-bottom:0.45rem;display:block;">
+                                    <i class="fas fa-hashtag me-2" style="color:var(--chesf-primary);"></i> Referral Code
                                 </label>
                                 {{ form.code }}
-                                <small style="color:var(--chesf-text-light);margin-top:0.25rem;display:block;">
+                                <small style="color:var(--chesf-text-light);margin-top:0.2rem;display:block;">
                                     If you have a referral code, enter it above.
                                 </small>
                             </div>
@@ -31,7 +31,7 @@
                                     <i class="fas fa-check me-2"></i> Apply Code
                                 </button>
                                 <div class="d-flex align-items-center justify-content-center fw-bold" style="color:var(--chesf-text-light);">OR</div>
-                                <a href="{% url 'payment' %}" class="btn btn-chesf-gold flex-grow-1 py-2">
+                                <a href="{% url 'payment' %}" class="btn btn-chesf-primary flex-grow-1 py-2">
                                     <i class="fas fa-credit-card me-2"></i> Pay ₦6,000
                                 </a>
                             </div>

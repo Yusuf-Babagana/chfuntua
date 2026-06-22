@@ -1,6 +1,6 @@
-# CHSTH Admission Portal
+# CHESF Admission Portal
 
-A complete Django-based admission portal for the College of Health Sciences and Technology Hadejia (CHSTH).
+A complete Django-based admission portal for the College of Health Sciences and Technology Funtua (CHESF).
 
 ## Features
 
@@ -153,7 +153,7 @@ Upload your project to PythonAnywhere using git or the Files interface.
 ### 2. Create Virtual Environment
 
 ```bash
-mkvirtualenv --python=/usr/bin/python3.10 chsth_env
+mkvirtualenv --python=/usr/bin/python3.10 CHESF_env
 pip install -r requirements.txt
 ```
 
@@ -177,7 +177,7 @@ path = '/home/yourusername/django_app'
 if path not in sys.path:
     sys.path.append(path)
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'chsth_admission.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'CHESF_admission.settings'
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
@@ -213,7 +213,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ```bash
 cd ~/django_app
-workon chsth_env
+workon CHESF_env
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py generate_referral_codes --count 100
@@ -245,7 +245,7 @@ Use live keys (starting with `pk_live_` and `sk_live_`) for production.
 
 ### Change School Name or Branding
 
-Edit `chsth_admission/urls.py`:
+Edit `CHESF_admission/urls.py`:
 
 ```python
 admin.site.site_header = "Your School Name"
@@ -265,7 +265,7 @@ Edit `templates/base.html` CSS variables:
 
 ### Change Application Fee
 
-Edit `chsth_admission/settings.py`:
+Edit `CHESF_admission/settings.py`:
 
 ```python
 APPLICATION_FEE = 7500  # Change to your amount
@@ -300,4 +300,4 @@ For questions or issues, contact the development team.
 
 ## License
 
-Copyright © 2025 College of Health Sciences and Technology Hadejia
+Copyright © 2025 College of Health Sciences and Technology Funtua
