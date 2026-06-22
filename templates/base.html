@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}CHESF Admission Portal{% endblock %}</title>
-    <meta name="description" content="College of Health and Environmental Sciences Funtua - Admission Portal">
+    <meta name="description" content="College of Health and Environmental Sciences Funtua - Official Admission Portal">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,17 +16,26 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-chesf sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-chesf sticky-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <span class="brand-icon"><i class="fas fa-graduation-cap"></i></span>
-                <span>CHESF Portal</span>
+                <span>CHESF</span>
             </a>
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                <ul class="navbar-nav mx-auto gap-1">
+                    {% if not user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#admissions">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#contact">Contact</a></li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav align-items-lg-center gap-1">
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'dashboard' %}">
@@ -34,12 +43,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <span class="nav-link fw-semibold text-chesf-primary">
+                            <span class="nav-link fw-semibold" style="color:var(--chesf-primary)!important;">
                                 <i class="fas fa-user-circle me-1"></i> {{ user.get_full_name|default:user.username }}
                             </span>
                         </li>
                         <li class="nav-item ms-lg-1">
-                            <a class="nav-link btn btn-chesf-light btn-chesf-sm" href="{% url 'logout' %}">
+                            <a class="btn btn-chesf-light btn-chesf-sm" href="{% url 'logout' %}">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </li>
@@ -48,8 +57,8 @@
                             <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt me-1"></i> Login</a>
                         </li>
                         <li class="nav-item ms-lg-1">
-                            <a class="btn btn-chesf-primary btn-chesf-sm px-4" href="{% url 'signup' %}">
-                                <i class="fas fa-user-plus me-1"></i> Sign Up
+                            <a class="btn btn-chesf-gradient btn-chesf-sm px-4 btn-chesf-rounded" href="{% url 'signup' %}">
+                                <i class="fas fa-rocket me-1"></i> Apply Now
                             </a>
                         </li>
                     {% endif %}
@@ -60,9 +69,13 @@
 
     <main class="flex-grow-1">
         {% if messages %}
-        <div class="container mt-4">
+        <div class="container mt-3">
             {% for message in messages %}
-                <div class="alert alert-chesf alert-chesf-{{ message.tags|yesno:'success,error,info' }} alert-dismissible fade show d-flex align-items-center" role="alert">
+                <div class="alert alert-chesf
+                    {% if 'success' in message.tags %}alert-chesf-success
+                    {% elif 'error' in message.tags or 'danger' in message.tags %}alert-chesf-error
+                    {% elif 'warning' in message.tags %}alert-chesf-warning
+                    {% else %}alert-chesf-info{% endif %} alert-dismissible fade show d-flex align-items-center" role="alert">
                     {% if 'success' in message.tags %}<i class="fas fa-check-circle fs-5 me-2"></i>{% endif %}
                     {% if 'error' in message.tags or 'danger' in message.tags %}<i class="fas fa-exclamation-circle fs-5 me-2"></i>{% endif %}
                     {% if 'info' in message.tags %}<i class="fas fa-info-circle fs-5 me-2"></i>{% endif %}
@@ -82,63 +95,64 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <span class="brand-icon bg-white text-chesf-primary" style="width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;">
+                        <span class="brand-icon bg-white text-chesf-primary" style="width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0;">
                             <i class="fas fa-graduation-cap"></i>
                         </span>
-                        <h5 class="fw-bold text-white mb-0">CHESF</h5>
+                        <h5 class="fw-bold text-white mb-0" style="font-size:1.1rem;">CHESF</h5>
                     </div>
-                    <p class="small mb-3" style="color:#94A3B8;">
-                        College of Health and Environmental Sciences Funtua. Training competent professionals in health and environmental sciences since inception.
+                    <p class="small mb-3" style="color:#64748B;line-height:1.7;">
+                        College of Health and Environmental Sciences Funtua. Dedicated to training competent professionals in health and environmental sciences since inception.
                     </p>
                     <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(255,255,255,0.08);color:#94A3B8;border:none;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(255,255,255,0.08);color:#94A3B8;border:none;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(255,255,255,0.08);color:#94A3B8;border:none;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="btn btn-chesf-light btn-chesf-sm" style="background:rgba(255,255,255,0.08);color:#94A3B8;border:none;"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-6 col-lg-2">
-                    <h6 class="footer-heading">Quick Links</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="{% url 'home' %}">Home</a></li>
-                        <li class="mb-2"><a href="{% url 'login' %}">Login</a></li>
-                        <li class="mb-2"><a href="{% url 'signup' %}">Apply Now</a></li>
+                    <h6 class="fh">Quick Links</h6>
+                    <ul class="list-unstyled small" style="line-height:2;">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'signup' %}">Apply Now</a></li>
+                        <li><a href="{% url 'home' %}#programs">Programs</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
-                    <h6 class="footer-heading">Programs</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="#">Community Health</a></li>
-                        <li class="mb-2"><a href="#">Environmental Health</a></li>
-                        <li class="mb-2"><a href="#">Health Information</a></li>
-                        <li class="mb-2"><a href="#">Nutrition & Dietetics</a></li>
+                    <h6 class="fh">Programs</h6>
+                    <ul class="list-unstyled small" style="line-height:2;">
+                        <li><a href="#">Community Health</a></li>
+                        <li><a href="#">Environmental Health</a></li>
+                        <li><a href="#">Health Information</a></li>
+                        <li><a href="#">Nutrition & Dietetics</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
-                    <h6 class="footer-heading">Contact Us</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2 d-flex align-items-start gap-2">
-                            <i class="fas fa-map-marker-alt mt-1" style="color:var(--chesf-primary-light);"></i>
-                            <span>P.M.B 6043 Kabomo Road, After Railway Crossing, Tudun Wada, Funtua, Katsina State, Nigeria</span>
+                    <h6 class="fh">Contact</h6>
+                    <ul class="list-unstyled small" style="line-height:2;">
+                        <li class="d-flex align-items-start gap-2">
+                            <i class="fas fa-map-marker-alt mt-1" style="color:var(--chesf-primary-light);font-size:0.8rem;"></i>
+                            <span>P.M.B 6043, Kabomo Road, Tudun Wada, Funtua, Katsina State</span>
                         </li>
-                        <li class="mb-2 d-flex align-items-center gap-2">
-                            <i class="fas fa-phone" style="color:var(--chesf-primary-light);"></i>
-                            <span>09035068809</span>
+                        <li class="d-flex align-items-center gap-2">
+                            <i class="fas fa-phone" style="color:var(--chesf-primary-light);font-size:0.8rem;"></i>
+                            <a href="tel:09035068809">09035068809</a>
                         </li>
-                        <li class="mb-2 d-flex align-items-center gap-2">
-                            <i class="fas fa-envelope" style="color:var(--chesf-primary-light);"></i>
+                        <li class="d-flex align-items-center gap-2">
+                            <i class="fas fa-envelope" style="color:var(--chesf-primary-light);font-size:0.8rem;"></i>
                             <a href="mailto:shesf@yahoo.com">shesf@yahoo.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <hr class="footer-divider">
+            <hr class="fd">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="small mb-0">&copy; {% now "Y" %} College of Health and Environmental Sciences Funtua (CHESF). All rights reserved.</p>
+                    <p class="small mb-0" style="color:#64748B;">&copy; {% now "Y" %} College of Health and Environmental Sciences Funtua (CHESF). All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
-                    <p class="small mb-0">Built with <i class="fas fa-heart text-danger"></i> for quality education</p>
+                    <p class="small mb-0" style="color:#64748B;">Built with <i class="fas fa-heart" style="color:#EF4444;"></i> for quality education</p>
                 </div>
             </div>
         </div>
