@@ -658,11 +658,39 @@ img {
 }
 
 /* ===== DASHBOARD ===== */
+.dash-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.dash-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #E67E22, #F39C12, #E67E22, #D35400, #F1C40F, #E67E22);
+  animation: dashRotateBg 12s linear infinite;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+@keyframes dashRotateBg {
+  to { transform: rotate(360deg); }
+}
+
 .dash-stat {
   background: var(--chesf-white);
   border: 1px solid var(--chesf-border);
   border-radius: var(--chesf-radius-sm);
   padding: 1.15rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dash-stat:hover {
+  box-shadow: var(--chesf-shadow-lg);
+  transform: translateY(-2px);
 }
 
 .dash-stat .dash-stat-value {
@@ -678,16 +706,230 @@ img {
   font-weight: 500;
 }
 
+.dash-welcome-card {
+  position: relative;
+  background: linear-gradient(135deg, #E67E22 0%, #F39C12 50%, #D35400 100%);
+  border: none;
+  border-radius: var(--chesf-radius);
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dash-welcome-card:hover {
+  box-shadow: 0 12px 30px rgba(230, 126, 34, 0.35);
+  transform: translateY(-2px);
+}
+
+.dash-welcome-card::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -20%;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+}
+
+.dash-welcome-card::before {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+}
+
+.dash-welcome-card * {
+  position: relative;
+  z-index: 1;
+}
+
+.dash-welcome-card .welcome-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.dash-status-card {
+  background: var(--chesf-white);
+  border: 1px solid var(--chesf-border);
+  border-radius: var(--chesf-radius);
+  padding: 1.15rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dash-status-card:hover {
+  box-shadow: var(--chesf-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.dash-submitted-banner {
+  position: relative;
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+  border: 1.5px solid #FFCC80;
+  border-radius: var(--chesf-radius);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dash-submitted-banner:hover {
+  box-shadow: 0 8px 25px rgba(230, 126, 34, 0.15);
+  transform: translateY(-2px);
+}
+
+.dash-submitted-banner::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: rgba(230, 126, 34, 0.05);
+  border-radius: 50%;
+}
+
+/* ===== COLORFUL STEP CARDS ===== */
+.step-card {
+  border-radius: var(--chesf-radius);
+  background: var(--chesf-white);
+  border: 1px solid var(--chesf-border);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+}
+
+.step-card .step-card-accent {
+  height: 4px;
+  width: 100%;
+}
+
+.step-card .step-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover .step-card-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.step-card .step-card-btn {
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  border: none;
+}
+
+.step-card .step-card-btn-start {
+  color: white;
+}
+
+.step-card .step-card-btn-start:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color: white;
+}
+
+.step-card .step-card-btn-update {
+  background: var(--chesf-bg-alt);
+  color: var(--chesf-text);
+  border: 1px solid var(--chesf-border);
+}
+
+.step-card .step-card-btn-update:hover {
+  background: var(--chesf-border);
+  color: var(--chesf-text-dark);
+}
+
+/* Color themes for step cards */
+.step-card-blue .step-card-accent { background: linear-gradient(90deg, #3B82F6, #60A5FA); }
+.step-card-blue .step-card-icon { background: #EFF6FF; color: #3B82F6; }
+.step-card-blue .step-card-btn-start { background: linear-gradient(135deg, #3B82F6, #60A5FA); }
+.step-card-blue .step-card-btn-start:hover { background: linear-gradient(135deg, #2563EB, #3B82F6); }
+
+.step-card-teal .step-card-accent { background: linear-gradient(90deg, #0D9488, #2DD4BF); }
+.step-card-teal .step-card-icon { background: #F0FDFA; color: #0D9488; }
+.step-card-teal .step-card-btn-start { background: linear-gradient(135deg, #0D9488, #14B8A6); }
+.step-card-teal .step-card-btn-start:hover { background: linear-gradient(135deg, #0F766E, #0D9488); }
+
+.step-card-purple .step-card-accent { background: linear-gradient(90deg, #7C3AED, #A78BFA); }
+.step-card-purple .step-card-icon { background: #FAF5FF; color: #7C3AED; }
+.step-card-purple .step-card-btn-start { background: linear-gradient(135deg, #7C3AED, #8B5CF6); }
+.step-card-purple .step-card-btn-start:hover { background: linear-gradient(135deg, #6D28D9, #7C3AED); }
+
+.step-card-pink .step-card-accent { background: linear-gradient(90deg, #DB2777, #F472B6); }
+.step-card-pink .step-card-icon { background: #FDF2F8; color: #DB2777; }
+.step-card-pink .step-card-btn-start { background: linear-gradient(135deg, #DB2777, #EC4899); }
+.step-card-pink .step-card-btn-start:hover { background: linear-gradient(135deg, #BE185D, #DB2777); }
+
+.step-card-green .step-card-accent { background: linear-gradient(90deg, #059669, #34D399); }
+.step-card-green .step-card-icon { background: #F0FDF4; color: #059669; }
+.step-card-green .step-card-btn-start { background: linear-gradient(135deg, #059669, #10B981); }
+.step-card-green .step-card-btn-start:hover { background: linear-gradient(135deg, #047857, #059669); }
+
+/* Completed step card overrides */
+.step-card.completed .step-card-accent { background: linear-gradient(90deg, #059669, #34D399) !important; }
+.step-card.completed .step-card-icon { background: #F0FDF4 !important; color: #059669 !important; }
+
 /* ===== PROGRESS ===== */
 .progress-chesf {
-  height: 6px;
-  border-radius: 3px;
+  height: 8px;
+  border-radius: 4px;
   background: var(--chesf-bg-alt);
+  overflow: hidden;
 }
 
 .progress-chesf .progress-bar {
-  background: var(--chesf-primary);
-  border-radius: 3px;
+  background: linear-gradient(90deg, #E67E22, #F39C12, #D35400);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-chesf .progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: progressShine 2s ease-in-out infinite;
+}
+
+@keyframes progressShine {
+  to { left: 100%; }
 }
 
 /* ===== TABLES ===== */

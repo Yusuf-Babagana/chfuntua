@@ -110,7 +110,7 @@ class Application(models.Model):
         ('chew', 'Diploma in Community Health Extension Worker (CHEW)'),
         ('jchew', 'Junior Community Health Extension Workers (JCHEW)'),
         ('nd_env_health', 'National Diploma in Environmental Health (ND)'),
-        ('hnd_env_health', 'Higher National Diploma in Environmental Health (HND)'),
+        ('hnd_env_health', 'Diploma in Environmental Health'),
         ('him', 'Diploma in Health Information Management (HIM)'),
         ('hpe', 'Diploma in Health Promotion & Education (HPE)'),
         ('dph', 'Diploma in Public Health (DPH)'),

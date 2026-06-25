@@ -13,12 +13,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='application',
             name='first_choice',
-            field=models.CharField(blank=True, choices=[('nd_chew', 'National Diploma in Community Health (ND-CHEW)'), ('chew', 'Diploma in Community Health Extension Worker (CHEW)'), ('jchew', 'Junior Community Health Extension Workers (JCHEW)'), ('nd_env_health', 'National Diploma in Environmental Health (ND)'), ('hnd_env_health', 'Higher National Diploma in Environmental Health (HND)'), ('him', 'Diploma in Health Information Management (HIM)'), ('hpe', 'Diploma in Health Promotion & Education (HPE)'), ('dph', 'Diploma in Public Health (DPH)')], max_length=50),
+            field=models.CharField(blank=True, choices=[('nd_chew', 'National Diploma in Community Health (ND-CHEW)'), ('chew', 'Diploma in Community Health Extension Worker (CHEW)'), ('jchew', 'Junior Community Health Extension Workers (JCHEW)'), ('nd_env_health', 'National Diploma in Environmental Health (ND)'), ('hnd_env_health', 'Diploma in Environmental Health'), ('him', 'Diploma in Health Information Management (HIM)'), ('hpe', 'Diploma in Health Promotion & Education (HPE)'), ('dph', 'Diploma in Public Health (DPH)')], max_length=50),
         ),
         migrations.AlterField(
             model_name='application',
             name='second_choice',
-            field=models.CharField(blank=True, choices=[('nd_chew', 'National Diploma in Community Health (ND-CHEW)'), ('chew', 'Diploma in Community Health Extension Worker (CHEW)'), ('jchew', 'Junior Community Health Extension Workers (JCHEW)'), ('nd_env_health', 'National Diploma in Environmental Health (ND)'), ('hnd_env_health', 'Higher National Diploma in Environmental Health (HND)'), ('him', 'Diploma in Health Information Management (HIM)'), ('hpe', 'Diploma in Health Promotion & Education (HPE)'), ('dph', 'Diploma in Public Health (DPH)')], max_length=50),
+            field=models.CharField(blank=True, choices=[('nd_chew', 'National Diploma in Community Health (ND-CHEW)'), ('chew', 'Diploma in Community Health Extension Worker (CHEW)'), ('jchew', 'Junior Community Health Extension Workers (JCHEW)'), ('nd_env_health', 'National Diploma in Environmental Health (ND)'), ('hnd_env_health', 'Diploma in Environmental Health'), ('him', 'Diploma in Health Information Management (HIM)'), ('hpe', 'Diploma in Health Promotion & Education (HPE)'), ('dph', 'Diploma in Public Health (DPH)')], max_length=50),
         ),
         migrations.AlterField(
             model_name='programme',

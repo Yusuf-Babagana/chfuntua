@@ -3,30 +3,31 @@
 {% block title %}Dashboard - CHESF Admission Portal{% endblock %}
 
 {% block content %}
+<div class="dash-bg">
 <div class="container py-4">
-    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 fade-up">
         <h4 style="font-weight:800;color:var(--chesf-text-dark);margin-bottom:0;">
             <i class="fas fa-th-large me-2" style="color:var(--chesf-primary);"></i> Application Dashboard
         </h4>
-        <span class="badge-chesf badge-chesf-green"><i class="far fa-clock me-1"></i> {{ application.created_at|date:"M d, Y" }}</span>
+        <span class="counter-pill counter-pill-purple"><i class="far fa-clock me-1"></i> {{ application.created_at|date:"M d, Y" }}</span>
     </div>
 
     <div class="row g-3 mb-4">
-        <div class="col-lg-8">
-            <div class="dash-stat h-100 d-flex align-items-center gap-3" style="background:var(--chesf-primary-bg);border-color:var(--chesf-border);">
-                <div style="width:50px;height:50px;border-radius:10px;background:var(--chesf-primary);display:flex;align-items:center;justify-content:center;color:white;font-size:1.2rem;font-weight:700;flex-shrink:0;">
+        <div class="col-lg-8 fade-up fade-up-delay-1">
+            <div class="dash-welcome-card h-100 d-flex align-items-center gap-3">
+                <div class="welcome-avatar">
                     {{ user.first_name|first|default:"A" }}{{ user.last_name|first|default:"S" }}
                 </div>
                 <div>
-                    <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:0.1rem;">Welcome, {{ user.get_full_name|default:user.username }}!</h5>
-                    <p style="font-size:0.82rem;color:var(--chesf-text-light);margin-bottom:0;">Continue your application to CHESF.</p>
+                    <h5 style="font-weight:700;color:white;margin-bottom:0.1rem;font-size:1.1rem;">Welcome, {{ user.get_full_name|default:user.username }}!</h5>
+                    <p style="font-size:0.82rem;color:rgba(255,255,255,0.8);margin-bottom:0;">Continue your application to CHESF.</p>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="dash-stat h-100 d-flex flex-column justify-content-center">
+        <div class="col-lg-4 fade-up fade-up-delay-2">
+            <div class="dash-status-card h-100 d-flex flex-column justify-content-center">
                 <div class="d-flex align-items-center justify-content-between mb-2">
-                    <span class="dash-stat-label">Status</span>
+                    <span class="dash-stat-label"><i class="fas fa-circle me-1" style="color:{% if application.status == 'submitted' or application.status == 'approved' %}#059669{% elif application.status == 'rejected' %}#DC2626{% else %}#3B82F6{% endif %};font-size:0.5rem;vertical-align:middle;"></i> Status</span>
                     <span class="badge-chesf rounded-pill 
                         {% if application.status == 'submitted' %}badge-chesf-green
                         {% elif application.status == 'approved' %}badge-chesf-green
@@ -37,12 +38,12 @@
                 </div>
                 {% if application.application_number %}
                 <div class="d-flex align-items-center justify-content-between mt-2 pt-2" style="border-top:1px solid var(--chesf-border);">
-                    <span class="dash-stat-label">App. No.</span>
+                    <span class="dash-stat-label"><i class="fas fa-hashtag me-1" style="color:var(--chesf-text-light);font-size:0.7rem;"></i> App. No.</span>
                     <span style="font-weight:700;color:var(--chesf-text-dark);font-size:0.82rem;">{{ application.application_number }}</span>
                 </div>
                 {% endif %}
                 <div class="d-flex align-items-center justify-content-between mt-2 pt-2" style="border-top:1px solid var(--chesf-border);">
-                    <span class="dash-stat-label">App. Type</span>
+                    <span class="dash-stat-label"><i class="fas fa-tag me-1" style="color:var(--chesf-text-light);font-size:0.7rem;"></i> App. Type</span>
                     <span style="font-weight:700;color:var(--chesf-text-dark);font-size:0.82rem;">{{ application.get_application_type_display }}</span>
                 </div>
             </div>
@@ -50,13 +51,13 @@
     </div>
 
     {% if application.status == 'submitted' or application.status == 'approved' %}
-    <div class="card-chesf mb-4" style="background:#FFF3E0;border-color:#FFE0B2;">
-        <div class="card-body text-center py-4">
-            <div style="width:56px;height:56px;border-radius:50%;background:rgba(5,150,105,0.1);display:inline-flex;align-items:center;justify-content:center;margin-bottom:0.7rem;">
-                <i class="fas fa-check-circle" style="font-size:1.8rem;color:var(--chesf-success);"></i>
+    <div class="dash-submitted-banner mb-4 fade-up fade-up-delay-3">
+        <div class="text-center py-4 px-3">
+            <div style="width:60px;height:60px;border-radius:50%;background:rgba(5,150,105,0.12);display:inline-flex;align-items:center;justify-content:center;margin-bottom:0.7rem;border:2px solid rgba(5,150,105,0.08);">
+                <i class="fas fa-check-circle" style="font-size:2rem;color:#059669;"></i>
             </div>
-            <h4 style="font-weight:700;color:#E67E22;">Application Successfully Submitted!</h4>
-            <p style="font-size:0.88rem;color:var(--chesf-text);margin-bottom:0.9rem;">Your application has been received and is under review.</p>
+            <h4 style="font-weight:800;color:#D35400;margin-bottom:0.3rem;">Application Successfully Submitted!</h4>
+            <p style="font-size:0.88rem;color:var(--chesf-text);margin-bottom:0.9rem;max-width:500px;margin-left:auto;margin-right:auto;">Your application has been received and is under review by the admissions committee.</p>
             <div class="d-flex justify-content-center gap-2 flex-wrap">
                 <a href="{% url 'application_summary' %}" class="btn btn-chesf-primary px-4">
                     <i class="fas fa-eye me-1"></i> View Summary
@@ -69,8 +70,10 @@
     </div>
     {% endif %}
 
-    <div class="d-flex align-items-center justify-content-between mb-3">
-        <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:0;">Application Sections</h5>
+    <div class="d-flex align-items-center justify-content-between mb-3 fade-up fade-up-delay-3">
+        <h5 style="font-weight:700;color:var(--chesf-text-dark);margin-bottom:0;">
+            <i class="fas fa-layer-group me-2" style="color:var(--chesf-primary);"></i> Application Sections
+        </h5>
         {% if application.status != 'submitted' and application.status != 'approved' %}
         <span class="counter-pill counter-pill-purple">
             <i class="fas fa-tasks me-1"></i> {{ completed_count }}/5 Completed
@@ -79,19 +82,24 @@
     </div>
 
     {% if application.status != 'submitted' and application.status != 'approved' %}
-    <div class="mb-3">
+    <div class="mb-4 fade-up fade-up-delay-4">
         <div class="progress progress-chesf">
             <div class="progress-bar" role="progressbar" style="width:{% widthratio completed_count 5 100 %}%" aria-valuenow="{% widthratio completed_count 5 100 %}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="d-flex justify-content-between mt-1">
+            <span style="font-size:0.7rem;color:var(--chesf-text-light);font-weight:500;">Progress</span>
+            <span style="font-size:0.7rem;color:var(--chesf-primary);font-weight:700;">{% widthratio completed_count 5 100 %}%</span>
         </div>
     </div>
     {% endif %}
 
     <div class="row g-3">
-        {% include "portal/partials/step_card.html" with title="Personal Information" icon="user" status=application.section_a_completed url="section_a" %}
-        {% include "portal/partials/step_card.html" with title="Schools Attended" icon="school" status=application.section_b_completed url="section_b" %}
-        {% include "portal/partials/step_card.html" with title="SSCE Results" icon="certificate" status=application.section_c_completed url="section_c" %}
-        {% include "portal/partials/step_card.html" with title="Course Selection" icon="book" status=application.section_d_completed url="section_d" %}
-        {% include "portal/partials/step_card.html" with title="Declaration & Upload" icon="signature" status=application.section_e_completed url="section_e" %}
+        {% include "portal/partials/step_card.html" with title="Personal Information" icon="user" status=application.section_a_completed url="section_a" color_class="step-card-blue" delay=1 %}
+        {% include "portal/partials/step_card.html" with title="Schools Attended" icon="school" status=application.section_b_completed url="section_b" color_class="step-card-teal" delay=2 %}
+        {% include "portal/partials/step_card.html" with title="SSCE Results" icon="certificate" status=application.section_c_completed url="section_c" color_class="step-card-purple" delay=3 %}
+        {% include "portal/partials/step_card.html" with title="Course Selection" icon="book" status=application.section_d_completed url="section_d" color_class="step-card-pink" delay=4 %}
+        {% include "portal/partials/step_card.html" with title="Declaration & Upload" icon="signature" status=application.section_e_completed url="section_e" color_class="step-card-green" delay=5 %}
     </div>
+</div>
 </div>
 {% endblock %}
