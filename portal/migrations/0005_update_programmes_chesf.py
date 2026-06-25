@@ -56,11 +56,11 @@ def replace_programmes(apps, schema_editor):
             'order': 4,
         },
         {
-            'name': 'Diploma in Environmental Health',
+            'name': 'Higher National Diploma in Environmental Health (HND)',
             'code': 'HND-ENV',
             'category': 'hnd',
             'duration': '2 Years',
-            'description': 'Diploma in Environmental Health for advanced training in environmental health management and policy.',
+            'description': 'Higher National Diploma in Environmental Health for advanced training in environmental health management and policy.',
             'admission_requirements': 'ND in Environmental Health with at least Lower Credit plus NYSC or five years work experience.',
             'accreditation_body': 'EHCON',
             'icon': 'fa-tree',
